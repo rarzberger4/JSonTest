@@ -131,8 +131,8 @@ public class JSonInOut {
         //writetest();
         //readtest();
 
-        writearraytest();
-        readarraytest();
+        //writearraytest();
+        //readarraytest();
 
     }
 }
