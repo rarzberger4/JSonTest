@@ -19,7 +19,7 @@ public class Questionnaire {
     public Questionnaire() {
         Gson gson = new Gson();
         try {
-            Reader reader = Files.newBufferedReader(Paths.get("Test_Output.json"));
+            Reader reader = Files.newBufferedReader(Paths.get("Questionnaire.json"));
             questt = gson.fromJson(reader, (Type) Questiont[].class);
         } catch (IOException e) {
             e.printStackTrace();
