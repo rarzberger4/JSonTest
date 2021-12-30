@@ -10,7 +10,7 @@ public class WriteCsv {
 
         writer.append("player1");
         writer.append(",");
-        writer.append((char) 14);
+        writer.append(String.valueOf(14));
         writer.append(System.lineSeparator());
 
         writer.flush();
