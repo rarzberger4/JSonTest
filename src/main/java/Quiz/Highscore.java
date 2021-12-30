@@ -31,7 +31,7 @@ public class Highscore {
     }
 
     public void safeNewHighscore() throws IOException {
-        FileWriter writer = new FileWriter("test.csv");
+        FileWriter writer = new FileWriter("Highscore.csv");
         for (Player player: highscore) {
             writer.append(player.getPlayerName());
             writer.append(",");
