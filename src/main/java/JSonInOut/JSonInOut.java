@@ -12,17 +12,19 @@ import java.nio.file.Paths;
 
 class Question {
     String question;
-    String[] answers;
+    String answer1;
+    String answer2;
+    String answer3;
+    String answer4;
     int difficulty;
     int answer;
 
     public Question(String question, String answer1, String answer2, String answer3, String answer4, int difficulty, int answer) {
         this.question = question;
-        this.answers = new String[4];
-        this.answers[0] = answer1;
-        this.answers[1] = answer2;
-        this.answers[2] = answer3;
-        this.answers[3] = answer4;
+        this.answer1 = answer1;
+        this.answer2 = answer2;
+        this.answer3 = answer3;
+        this.answer4 = answer4;
         this.difficulty = difficulty;
         this.answer = answer;
     }
@@ -47,7 +49,7 @@ public class JSonInOut {
 
 
         try {
-            Writer writer = new FileWriter("Output.json");
+            Writer writer = new FileWriter("Test_Output.json");
             gson.toJson(question, writer);
             writer.close();
         } catch (IOException e) {
@@ -61,7 +63,7 @@ public class JSonInOut {
         Question question = new Question();
 
         try {
-            Reader reader = Files.newBufferedReader(Paths.get("Output.json"));
+            Reader reader = Files.newBufferedReader(Paths.get("Test_Output.json"));
             question = gson.fromJson(reader, Question.class);
             // reader.close();
         } catch (IOException e) {
@@ -70,10 +72,10 @@ public class JSonInOut {
 
 
         System.out.println(question.question);
-        System.out.println(question.answers[1]);
-        System.out.println(question.answers[2]);
-        System.out.println(question.answers[3]);
-        System.out.println(question.answers[4]);
+        System.out.println(question.answer1);
+        System.out.println(question.answer2);
+        System.out.println(question.answer3);
+        System.out.println(question.answer4);
         System.out.println(question.answer);
 
 
@@ -95,7 +97,7 @@ public class JSonInOut {
 
 
         try {
-            Writer writer = new FileWriter("Output.json");
+            Writer writer = new FileWriter("Test_Output.json");
             gson.toJson(question, writer);
             writer.close();
         } catch (IOException e) {
@@ -106,21 +108,23 @@ public class JSonInOut {
     public static void readarraytest() {
         Gson gson = new Gson();
         Question[] question = new Question[10];
+        Object[] testquest = new Object[10];
 
         try {
-            Reader reader = Files.newBufferedReader(Paths.get("Output.json"));
+            Reader reader = Files.newBufferedReader(Paths.get("Test_Output.json"));
+           // testquest = gson.fromJson(reader, Question[].class);
             question = gson.fromJson(reader, Question[].class);
-            // reader.close();
+            reader.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
         for (int i = 0; i < question.length; i++){
             System.out.println(question[i].question);
-            System.out.println(question[i].answers[0]);
-            System.out.println(question[i].answers[1]);
-            System.out.println(question[i].answers[2]);
-            System.out.println(question[i].answers[3]);
+            System.out.println(question[i].answer1);
+            System.out.println(question[i].answer2);
+            System.out.println(question[i].answer3);
+            System.out.println(question[i].answer4);
             System.out.println(question[i].difficulty);
             System.out.println(question[i].answer);
         }
@@ -132,7 +136,7 @@ public class JSonInOut {
         //readtest();
 
         //writearraytest();
-        //readarraytest();
+        readarraytest();
 
     }
 }
