@@ -6,13 +6,6 @@ public class Question {
     public int rightAnswer;
     public int difficulty;
 
-    public Question(String question, String[] answers, int rightAnswer, int difficulty) {
-        this.question = question;
-        this.answers = answers;
-        this.rightAnswer = rightAnswer;
-        this.difficulty = difficulty;
-    }
-
     public Question (Questiont q){
         this.question = q.question;
         this.answers[0] = q.answer1;
@@ -23,8 +16,7 @@ public class Question {
         this.difficulty = q.difficulty;
     }
 
-
-    public String PrintQuestion() {
+    public String printQuestion() {
         String output = "";
         output += this.question + System.lineSeparator();
         for(int i = 0; i < this.answers.length; i++) {
@@ -33,11 +25,11 @@ public class Question {
         return output;
     }
 
-    public boolean CheckAnswer(int answer) {
+    public boolean checkAnswer(int answer) {
         return this.rightAnswer == answer;
     }
 
-    public String PrintRightAnswer() {
+    public String printRightAnswer() {
         return this.answers[this.rightAnswer - 1];
     }
 

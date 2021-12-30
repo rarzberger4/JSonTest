@@ -29,17 +29,10 @@ public class Questionnaire {
 
         for(int i = 0; i < questt.length; i++){
             questionnaire[i] = new Question(questt[i]);     //translate json saved questions
-
-            System.out.println(questt[i].answer);
-            System.out.println(questionnaire[i].question + " " + questionnaire[i].difficulty + " " + questionnaire[i].rightAnswer);
         }
     }
 
-
-
-
-
-    public Question RandomQuestion(int difficulty) {
+    public Question randomQuestion(int difficulty) {
         List<Question> filtered = Arrays.stream(questionnaire).filter(f -> f.getDifficulty() == difficulty).collect(Collectors.toList());
         return filtered.get((int)(Math.random() * filtered.size()));
     }
