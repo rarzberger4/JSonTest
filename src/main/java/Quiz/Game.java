@@ -17,14 +17,7 @@ public class Game {
     }
 
     public Question getQuestion() {
-        int difficulty;
-        if (this.questionNumber <= this.maxQuestions /3) {
-            difficulty = 1;
-        } else if (this.questionNumber <= this.maxQuestions /3*2) {
-            difficulty = 2;
-        } else {
-            difficulty = 3;
-        }
+        int difficulty = (int) Math.ceil((float)this.questionNumber/(float)this.maxQuestions*3);
         return this.questionnaire[0].randomQuestion(difficulty);
     }
 
@@ -33,7 +26,8 @@ public class Game {
     }
 
     public void addPoints() {
-        this.points++;
+        int difficulty = (int) Math.ceil((float)this.questionNumber/(float)this.maxQuestions*3);
+        this.points += this.questionNumber * difficulty;
     }
 
     public String printStatus() {
@@ -49,7 +43,7 @@ public class Game {
     }
 
     public String printVictory() {
-        String output = this.points + " of " + this.maxQuestions + " Points!";
+        String output = this.points + " of " + 108 + " Points!";
         if (this.points == this.maxQuestions) {
             output =  "Full score! Incredible!";
         } else if (this.points < this.maxQuestions *0.5) {
