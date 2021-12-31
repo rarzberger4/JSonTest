@@ -20,7 +20,7 @@ public class Question {
         String output = "";
         output += this.question + System.lineSeparator();
         for(int i = 0; i < this.answers.length; i++) {
-            output += "(" + (i+1) + ")" + this.answers[i] + System.lineSeparator();
+            output += "(" + (i+1) + ") " + this.answers[i] + System.lineSeparator();
         }
         return output;
     }

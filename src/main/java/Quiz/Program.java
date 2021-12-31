@@ -8,10 +8,10 @@ public class Program {
     public static void main(String[] args) throws IOException {
         Questionnaire q = new Questionnaire();
         Highscore h = new Highscore();
+        Sounds s = new Sounds();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome!" + System.lineSeparator() + "(1) Show Highscore" + System.lineSeparator() + "(2) Play game");
         if (Integer.parseInt(scanner.nextLine().trim()) == 1) {
-            System.out.println("Player\tScore");
             h.printHighscore();
         } else {
             System.out.println("Enter your name:");
@@ -25,9 +25,11 @@ public class Program {
                 if(question.checkAnswer(selectedAnswer)) {
                     System.out.println("Correct!");
                     myGame.addPoints();
+                    s.playPosSound();
                 } else {
                     System.out.print("Wrong... Correct answer: ");
                     System.out.println(question.printRightAnswer());
+                    s.playNegSound();
                 }
                 System.out.println(myGame.printStatus());
             }

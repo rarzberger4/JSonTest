@@ -1,5 +1,6 @@
 package Quiz;
 
+
 public class Game {
 
     private final Questionnaire[] questionnaire;
@@ -13,7 +14,7 @@ public class Game {
         this.maxQuestions = maxQuestions;
         this.questionNumber = 0;
         this.points = 0;
-        this.player = new Player(playerName, 0);
+        this.player = new Player(playerName, 0, "");
     }
 
     public Question getQuestion() {
@@ -63,4 +64,6 @@ public class Game {
     public String getPlayerName() {
         return this.player.getPlayerName();
     }
+
+
 }
