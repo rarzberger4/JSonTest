@@ -37,15 +37,11 @@ public class Highscore {
         }
     }
 
-    public void addNewHighscore(String playerName, int score) {
+    public void updateHighscore(String playerName, int score) throws IOException {
         String time = new SimpleDateFormat("yyyy-MM-dd_HH:mm").format(new Timestamp(System.currentTimeMillis()));
-        Player player = new Player(playerName, score, time);
-        highscore.add(player);
+        Player p = new Player(playerName, score, time);
+        highscore.add(p);
         highscore.sort((p1, p2) -> p2.getScore() - p1.getScore());
-    }
-
-
-    public void safeNewHighscore() throws IOException {
         FileWriter writer = new FileWriter("Highscore.csv");
         for (Player player: highscore) {
             writer.append(player.playerName);

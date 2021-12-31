@@ -33,8 +33,7 @@ public class Program {
                 }
                 System.out.println(myGame.printStatus());
             }
-            h.addNewHighscore(myGame.getPlayerName(), myGame.getPoints());
-            h.safeNewHighscore();
+            h.updateHighscore(myGame.getPlayerName(), myGame.getPoints());
             System.out.println(myGame.printVictory());
         }
 
