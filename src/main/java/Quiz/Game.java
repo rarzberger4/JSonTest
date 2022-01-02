@@ -1,15 +1,17 @@
 package Quiz;
 
 
+import java.util.ArrayList;
+
 public class Game {
 
-    private final Questionnaire[] questionnaire;
+    private Questionnaire questionnaire;
     private final int maxQuestions;
     private int questionNumber;
     private int points;
     private Player player;
 
-    public Game(Questionnaire[] questionnaire, int maxQuestions, String playerName) {
+    public Game(Questionnaire questionnaire, int maxQuestions, String playerName) {
         this.questionnaire = questionnaire;
         this.maxQuestions = maxQuestions;
         this.questionNumber = 0;
@@ -19,7 +21,7 @@ public class Game {
 
     public Question getQuestion() {
         int difficulty = (int) Math.ceil((float)this.questionNumber/(float)this.maxQuestions*3);
-        return this.questionnaire[0].randomQuestion(difficulty);
+        return this.questionnaire.randomQuestion(difficulty);
     }
 
     public void addQuestionNumber() {

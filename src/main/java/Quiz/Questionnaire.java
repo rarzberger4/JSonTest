@@ -7,34 +7,44 @@ import java.io.Reader;
 import java.lang.reflect.Type;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class Questionnaire {
 
     private Questiont[] questt;
-    private Question[] questionnaire;
+    private ArrayList<Question> questionnaire = new ArrayList<>();
 
     public Questionnaire() {
         Gson gson = new Gson();
         try {
             Reader reader = Files.newBufferedReader(Paths.get("Questionnaire.json"));
             questt = gson.fromJson(reader, (Type) Questiont[].class);
+            reader.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        questionnaire = new Question[questt.length];
-
-        for(int i = 0; i < questt.length; i++){
-            questionnaire[i] = new Question(questt[i]);     //translate json saved questions
+        for(Questiont gt : questt){
+            questionnaire.add(new Question(gt));
         }
+
     }
 
     public Question randomQuestion(int difficulty) {
-        List<Question> filtered = Arrays.stream(questionnaire).filter(f -> f.getDifficulty() == difficulty).collect(Collectors.toList());
-        return filtered.get((int)(Math.random() * filtered.size()));
+        List<Question> filtered = new ArrayList<>();
+        for (Question q : questionnaire){
+            if(q.getDifficulty()==difficulty){
+                filtered.add(q);
+            }
+        }
+        double help = Math.random()*filtered.size();
+        int index = (int) help;
+        questionnaire.remove(filtered.get(index));
+        return filtered.get(index);
     }
 
 }
