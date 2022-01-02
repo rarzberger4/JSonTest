@@ -22,7 +22,7 @@ public class Sounds {
             Clip clip = AudioSystem.getClip();
             clip.open(audioIn);
             clip.start();
-            Thread.sleep(2000);
+            Thread.sleep(100);
         }
         catch (Exception e) {
             e.printStackTrace(System.out);
