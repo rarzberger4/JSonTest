@@ -30,10 +30,10 @@ public class Program {
                 System.out.println(myGame.printQuestionNumber());
                 System.out.print(question.printQuestion());
                 int selectedAnswer = Integer.parseInt(scanner.nextLine().trim());
-                if(selectedAnswer==5){
+                if(selectedAnswer == 5){
                     System.out.println("Are you sure you want to give up? Your current score will be saved to highscore. \n(1) Yes\n(2) No");
                     int answer = Integer.parseInt(scanner.nextLine().trim());
-                    if(answer==1){
+                    if(answer == 1){
                         h.updateHighscore(myGame.getPlayerName(), myGame.getPoints());
                         System.out.println("You quit the game. Your score of " + myGame.getPoints() + " points was saved to highscore.");
                         return;

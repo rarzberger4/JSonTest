@@ -22,6 +22,7 @@ public class Question {
         for(int i = 0; i < this.answers.length; i++) {
             output += "(" + (i+1) + ") " + this.answers[i] + System.lineSeparator();
         }
+        output += "\n(5) give up and quit the game\n";
         return output;
     }
 
