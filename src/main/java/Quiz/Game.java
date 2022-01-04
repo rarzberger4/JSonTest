@@ -1,19 +1,24 @@
 package Quiz;
 
+
+import java.util.ArrayList;
+
 public class Game {
 
-    private final Questionnaire questionnaire;
+    private Questionnaire questionnaire;
     private final int maxQuestions;
     private int questionNumber;
     private int points;
-    private final Player player;
+    private Player player;
+    private Joker jokers;
 
-    public Game(Questionnaire questionnaire, int maxQuestions, String playerName) {
+    public Game(Questionnaire questionnaire, int maxQuestions, String playerName, Joker joker) {
         this.questionnaire = questionnaire;
         this.maxQuestions = maxQuestions;
         this.questionNumber = 0;
         this.points = 0;
         this.player = new Player(playerName, 0, "");
+        this.jokers = joker;
     }
 
     public Question getQuestion() {
@@ -28,15 +33,6 @@ public class Game {
     public void addPoints() {
         int difficulty = (int) Math.ceil((float)this.questionNumber/(float)this.maxQuestions*3);
         this.points += this.questionNumber * difficulty;
-    }
-
-    public void deductPoints() {
-        int difficulty = (int) Math.ceil((float)this.questionNumber/(float)this.maxQuestions*3);
-        if (this.points > this.questionNumber * difficulty / 3) {
-            this.points -= this.questionNumber * difficulty / 3;
-        } else {
-            this.points = 0;
-        }
     }
 
     public String printStatus() {
@@ -72,5 +68,6 @@ public class Game {
     public String getPlayerName() {
         return this.player.getPlayerName();
     }
+
 
 }

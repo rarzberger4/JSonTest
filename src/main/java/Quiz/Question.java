@@ -1,11 +1,12 @@
 package Quiz;
 
-public class Question {
 
+public class Question {
     public String question;
     public String[] answers = new String[4];
     public int rightAnswer;
     public int difficulty;
+    public String hint;
 
     public Question (Questiont q){
         this.question = q.question;
@@ -15,6 +16,7 @@ public class Question {
         this.answers[3] = q.answer4;
         this.rightAnswer = q.answer;
         this.difficulty = q.difficulty;
+        this.hint = q.hint;
     }
 
     public String printQuestion() {
@@ -37,5 +39,20 @@ public class Question {
 
     public int getDifficulty() {
         return this.difficulty;
+    }
+
+    public void useFifty() {
+        if ((rightAnswer == 1) || (rightAnswer == 4)) {
+            answers[1] = "";
+            answers[2] = "";
+        }
+        else {
+            answers[0] = "";
+            answers[3] = "";
+        }
+    }
+
+    public String getHint() {
+        return hint;
     }
 }
