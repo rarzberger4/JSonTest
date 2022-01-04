@@ -1,6 +1,7 @@
 package Quiz;
 
 public class Questiont {
+
     String question;
     String answer1;
     String answer2;

@@ -17,7 +17,7 @@ public class Program {
         Integer.parseInt(scanner.nextLine().trim()) needed because it also consumes the new line character, nextInt() does not --> nextLine() reads new line character instead of expected new Line
         https://stackoverflow.com/questions/26586489/integer-parseintscanner-nextline-vs-scanner-nextint
          */
-        while (!scanner.hasNext("[12]")) {
+        while (!scanner.hasNext("[12]")) {     // if input != 1 or 2 >> error message
             System.out.println("Choose a valid answer");
             scanner.nextLine();
         }
@@ -62,6 +62,7 @@ public class Program {
                 } else {
                     System.out.print("Wrong... Correct answer: ");
                     System.out.println(question.printRightAnswer());
+                    myGame.deductPoints();
                     s.playNegSound();
                 }
                 System.out.println(myGame.printStatus());

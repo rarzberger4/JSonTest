@@ -1,6 +1,7 @@
 package Quiz;
 
 public class Question {
+
     public String question;
     public String[] answers = new String[4];
     public int rightAnswer;

@@ -1,6 +1,7 @@
 package Quiz;
 
 public class Player {
+
     String playerName;
     int Score;
     String timeStamp;

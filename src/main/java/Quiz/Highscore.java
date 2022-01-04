@@ -11,6 +11,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Highscore {
+
     private List<Player> highscore = new ArrayList<>();
 
     public Highscore() {
@@ -65,18 +66,6 @@ public class Highscore {
             }
         }
 
-        /*
-        for (Player player: highscore) {
-            writer.append(player.playerName);
-            writer.append(",");
-            writer.append(String.valueOf(player.Score));
-            writer.append(",");
-            writer.append(player.timeStamp);
-            writer.append(System.lineSeparator());
-        }
-        writer.flush();
-        writer.close();
-        */
     }
 
 }
