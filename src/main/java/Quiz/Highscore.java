@@ -43,6 +43,29 @@ public class Highscore {
         highscore.add(p);
         highscore.sort((p1, p2) -> p2.getScore() - p1.getScore());
         FileWriter writer = new FileWriter("Highscore.csv");
+        if (highscore.size() < 20) {
+            for (Player player: highscore) {
+                writer.append(player.playerName);
+                writer.append(",");
+                writer.append(String.valueOf(player.Score));
+                writer.append(",");
+                writer.append(player.timeStamp);
+                writer.append(System.lineSeparator());
+            }
+            writer.flush();
+            writer.close();
+        } else {
+            for (int i = 0; i < 20; i++) {
+                writer.append(highscore.get(i).playerName);
+                writer.append(",");
+                writer.append(String.valueOf(highscore.get(i).Score));
+                writer.append(",");
+                writer.append(highscore.get(i).timeStamp);
+                writer.append(System.lineSeparator());
+            }
+        }
+
+        /*
         for (Player player: highscore) {
             writer.append(player.playerName);
             writer.append(",");
@@ -53,6 +76,7 @@ public class Highscore {
         }
         writer.flush();
         writer.close();
+        */
     }
 
 }
