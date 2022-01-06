@@ -35,6 +35,15 @@ public class Game {
         this.points += this.questionNumber * difficulty;
     }
 
+    public void deductPoints() {
+        int difficulty = (int) Math.ceil((float)this.questionNumber/(float)this.maxQuestions*3);
+        if (this.points > this.questionNumber * difficulty / 3) {
+            this.points -= this.questionNumber * difficulty / 3;
+        } else {
+            this.points = 0;
+        }
+    }
+
     public String printStatus() {
         return "Current points: " + this.points + System.lineSeparator();
     }
