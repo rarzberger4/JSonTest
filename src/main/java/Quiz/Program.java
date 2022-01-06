@@ -113,6 +113,7 @@ public class Program {
             if (answer == 1) {
                 h.updateHighscore(myGame.getPlayerName(), myGame.getPoints());
                 System.out.println("You quit the game.");
+                System.exit(0);
             }
         }
     }
