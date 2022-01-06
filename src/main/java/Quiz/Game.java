@@ -20,7 +20,7 @@ public class Game {
     public Game(Questionnaire questionnaire, int maxQuestions, String playerName) {
         this.questionnaire = questionnaire;
         this.maxQuestions = maxQuestions;
-        this.questionNumber = 0;
+        this.questionNumber = 1;
         this.points = 0;
         this.player = new Player(playerName, 0, "");
         Joker1 hint = this.hint;
@@ -34,15 +34,15 @@ public class Game {
         return this.questionnaire.randomQuestion(difficulty);
     }
 
-    public String printQuestion() {
+    public void printQuestion() {
         String output = this.question.question + System.lineSeparator();
         for(int i = 0; i < this.question.answers.length; i++) {
             output += "(" + (i+1) + ") " + this.question.answers[i] + System.lineSeparator();
         }
         output += "Jokers: (5) " + this.fifty.getJokerName() + " (6) " + this.hint.getJokerName() + " (7) " + this.skip.getJokerName() + System.lineSeparator();
-        output += "(8) give up and quit the game" + System.lineSeparator();
+        output += "(8) give up and quit the game";
         output.length();
-        return output;
+        System.out.println(output);
     }
 
     public boolean checkAnswer(int answer) {
@@ -71,19 +71,19 @@ public class Game {
         }
     }
 
-    public String printStatus() {
-        return "Current points: " + this.points + System.lineSeparator();
+    public void printStatus() {
+        System.out.println("Current points: " + this.points + System.lineSeparator());
     }
 
-    public String printQuestionNumber() {
-        return "Question number " + this.questionNumber + " of " + this.maxQuestions + ":";
+    public void printQuestionNumber() {
+        System.out.println("Question number " + this.questionNumber + " of " + this.maxQuestions + ":");
     }
 
     public boolean End() {
         return this.questionNumber == this.maxQuestions;
     }
 
-    public String printVictory() {
+    public void printVictory() {
         String output = this.points + " of " + 108 + " Points!";
         if (this.points == this.maxQuestions) {
             output =  "Full score! Incredible!";
@@ -94,7 +94,7 @@ public class Game {
         } else {
             output = "Excellent! You have " + output;
         }
-        return output;
+        System.out.println(output);
     }
 
     public int getPoints() {
@@ -107,18 +107,39 @@ public class Game {
 
     public void useFiftyFifty() {
         if (this.fifty.isAvailable()) {
+            System.out.println("You selected the 50/50-joker.");
             ArrayList<Integer> a = new ArrayList<Integer>(List.of(0,1,2,3));
             a.remove(this.question.rightAnswer-1);  //remove index of right answer --> indices of 3 wrong answers remain
             a.remove((int) (Math.random() * 3));        //remove random index of 1 of 3 remaining wrong answer --> indices of 2 wrong answers remain
             for (int i: a) {
                 this.question.answers[i] = "";      // set values of 2 remaining wrong answers to ""
                 }
+            this.printQuestion();
             this.fifty.setAvailable(false);
         } else {
-            System.out.println("You already used this joker.");
+            System.out.println("You already used the 50/50-joker.");
         }
 
     }
 
+    public void useHint() {
+        if (this.hint.isAvailable()) {
+            System.out.println("You selected the hint joker.");
+            System.out.println("Hint: " + this.question.hint);
+            System.out.println("Hint joker not fully implemented.");
+            this.hint.setAvailable(false);
+        } else {
+            System.out.println("You already used the hint joker.");
+        }
+    }
+
+    public void useSkip() {
+        if (this.skip.isAvailable()) {
+            System.out.println("You selected the skip joker.");
+            this.skip.setAvailable(false);
+        } else {
+            System.out.println("You already used the skip joker.");
+        }
+    }
 
 }
