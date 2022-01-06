@@ -12,9 +12,9 @@ public class Game {
     private int points;
     private Player player;
     private Question question;
-    private Joker1 hint = new Joker1("Hint");
-    private Joker1 fifty = new Joker1("50/50");
-    private Joker1 skip = new Joker1("Skip question");
+    private Joker hint = new Joker("Hint");
+    private Joker fifty = new Joker("50/50");
+    private Joker skip = new Joker("Skip question");
 
 
     public Game(Questionnaire questionnaire, int maxQuestions, String playerName) {
@@ -23,9 +23,9 @@ public class Game {
         this.questionNumber = 1;
         this.points = 0;
         this.player = new Player(playerName, 0, "");
-        Joker1 hint = this.hint;
-        Joker1 fifty = this.fifty;
-        Joker1 skip = this.skip;
+        Joker hint = this.hint;
+        Joker fifty = this.fifty;
+        Joker skip = this.skip;
     }
 
     public Question getQuestion() {

@@ -2,44 +2,24 @@ package Quiz;
 
 public class Joker {
 
-    private String fifty;
-    private String hint;
-    private String replace;
+    private final String jokerName;
+    private boolean available;
 
-    public Joker() {
-        this.fifty = "(6) 50/50 ";
-        this.hint = "(7) Hint ";
-        this.replace = "(8) Skip Question ";
+    public Joker(String jokerName) {
+        this.jokerName = jokerName;
+        this.available = true;
     }
 
-    public String getJokers() {
-        if (fifty.equals("") && hint.equals("") && replace.equals("")) {
-            return "All Jokers used!";
-        }
-        return "Available Jokers: " + fifty + hint + replace;
+    public String getJokerName() {
+        return jokerName;
     }
 
-    public void useFifty() {
-        fifty = "";
+    public boolean isAvailable() {
+        return available;
     }
 
-    public void useHint() {
-        hint = "";
+    public void setAvailable(boolean available) {
+        this.available = available;
     }
 
-    public void useReplace() {
-        replace = "";
-    }
-
-    public String getFifty() {
-        return fifty;
-    }
-
-    public String getHint() {
-        return hint;
-    }
-
-    public String getReplace() {
-        return replace;
-    }
 }
