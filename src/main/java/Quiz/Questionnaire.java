@@ -41,8 +41,7 @@ public class Questionnaire {
                 filtered.add(q);
             }
         }
-        double help = Math.random()*filtered.size();
-        int index = (int) help;
+        int index = (int) (Math.random() * filtered.size());
         questionnaire.remove(filtered.get(index));
         return filtered.get(index);
     }
