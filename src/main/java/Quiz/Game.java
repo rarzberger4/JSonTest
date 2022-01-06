@@ -19,7 +19,7 @@ public class Game {
     public Game(Questionnaire questionnaire, int maxQuestions, String playerName) {
         this.questionnaire = questionnaire;
         this.maxQuestions = maxQuestions;
-        this.questionNumber = 1;
+        this.questionNumber = 0;
         this.points = 0;
         this.player = new Player(playerName, 0, "");
     }
@@ -75,19 +75,28 @@ public class Game {
     }
 
     public boolean End() {
-        return this.questionNumber - 1 == this.maxQuestions;
+        return this.questionNumber == this.maxQuestions;
     }
 
     public void printVictory() {
-        String output = this.points + " of " + 108 + " Points!";
-        if (this.points == this.maxQuestions) {
-            output =  "Full score! Incredible!";
-        } else if (this.points < this.maxQuestions *0.5) {
+        String output = "";
+        int maxPoints = 0;
+        if (this.maxQuestions == 9) {
+            maxPoints = 108;
+        } else if (this.maxQuestions == 12) {
+            maxPoints = 188;
+        } else if (this.maxQuestions == 15) {
+            maxPoints = 290;
+        }
+        output = this.points + " of " + maxPoints + " Points!";
+        if (this.points < this.maxQuestions *0.5) {
             output = "You need some practice. You only have " + output;
         } else if (this.points < this.maxQuestions *0.8) {
             output = "Good job! You have " + output;
-        } else {
+        } else if (this.points < maxPoints) {
             output = "Excellent! You have " + output;
+        } else {
+            output =  "Full score! Incredible!";
         }
         System.out.println(output);
     }
@@ -102,7 +111,7 @@ public class Game {
 
     public void useFiftyFifty() {
         if (this.fifty.isAvailable()) {
-            System.out.println("You selected the 50/50-joker.");
+            System.out.println("You selected the 50/50 joker.");
             ArrayList<Integer> a = new ArrayList<Integer>(List.of(0,1,2,3));
             a.remove(this.question.rightAnswer-1);  //remove index of right answer --> indices of 3 wrong answers remain
             a.remove((int) (Math.random() * 3));        //remove random index of 1 of 3 remaining wrong answer --> indices of 2 wrong answers remain
@@ -130,7 +139,7 @@ public class Game {
 
     public void useSkip() {
         if (this.skip.isAvailable()) {
-            System.out.println("You selected the skip joker.");
+            System.out.println("You selected the skip joker. Here is your new question:");
             this.skip.setAvailable(false);
         } else {
             System.out.println("You already used the skip joker.");
