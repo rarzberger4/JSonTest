@@ -2,11 +2,11 @@ package Quiz;
 
 
 public class Question {
-    public String question;
-    public String[] answers = new String[4];
-    public int rightAnswer;
-    public int difficulty;
-    public String hint;
+    private String question;
+    private String[] answers = new String[4];
+    private int rightAnswer;
+    private int difficulty;
+    private String hint;
 
     public Question (Questiont q){
         this.question = q.question;
@@ -23,4 +23,19 @@ public class Question {
         return this.difficulty;
     }
 
+    public String getQuestion() {
+        return question;
+    }
+
+    public String[] getAnswers() {
+        return answers;
+    }
+
+    public int getRightAnswer() {
+        return rightAnswer;
+    }
+
+    public String getHint() {
+        return hint;
+    }
 }

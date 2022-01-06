@@ -31,9 +31,9 @@ public class Game {
     }
 
     public void printQuestion() {
-        String output = this.question.question + System.lineSeparator();
-        for(int i = 0; i < this.question.answers.length; i++) {
-            output += "(" + (i+1) + ") " + this.question.answers[i] + System.lineSeparator();
+        String output = this.question.getQuestion() + System.lineSeparator();
+        for(int i = 0; i < this.question.getAnswers().length; i++) {
+            output += "(" + (i+1) + ") " + this.question.getAnswers()[i] + System.lineSeparator();
         }
         output += "Jokers: (5) " + this.fifty.getJokerName() + " (6) " + this.hint.getJokerName() + " (7) " + this.skip.getJokerName() + System.lineSeparator();
         output += "(8) give up and quit the game";
@@ -41,11 +41,11 @@ public class Game {
     }
 
     public boolean checkAnswer(int answer) {
-        return this.question.rightAnswer == answer;
+        return this.question.getRightAnswer() == answer;
     }
 
     public void printRightAnswer() {
-        System.out.println(this.question.answers[this.question.rightAnswer - 1]);
+        System.out.println(this.question.getAnswers()[this.question.getRightAnswer() - 1]);
     }
 
     public void addQuestionNumber() {
@@ -113,10 +113,10 @@ public class Game {
         if (this.fifty.isAvailable()) {
             System.out.println("You selected the 50/50 joker.");
             ArrayList<Integer> a = new ArrayList<Integer>(List.of(0,1,2,3));
-            a.remove(this.question.rightAnswer-1);  //remove index of right answer --> indices of 3 wrong answers remain
+            a.remove(this.question.getRightAnswer()-1);  //remove index of right answer --> indices of 3 wrong answers remain
             a.remove((int) (Math.random() * 3));        //remove random index of 1 of 3 remaining wrong answer --> indices of 2 wrong answers remain
             for (int i: a) {
-                this.question.answers[i] = "";      // set values of 2 remaining wrong answers to ""
+                this.question.getAnswers()[i] = "";      // set values of 2 remaining wrong answers to ""
                 }
             this.printQuestion();
             this.fifty.setAvailable(false);
@@ -129,7 +129,7 @@ public class Game {
     public void useHint() {
         if (this.hint.isAvailable()) {
             System.out.println("You selected the hint joker.");
-            System.out.println("Hint: " + this.question.hint);
+            System.out.println("Hint: " + this.question.getHint());
             System.out.println("(Hint joker not fully implemented...)");
             this.hint.setAvailable(false);
         } else {
