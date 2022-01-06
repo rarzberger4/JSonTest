@@ -1,6 +1,5 @@
 package Quiz;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,9 +22,6 @@ public class Game {
         this.questionNumber = 1;
         this.points = 0;
         this.player = new Player(playerName, 0, "");
-        Joker hint = this.hint;
-        Joker fifty = this.fifty;
-        Joker skip = this.skip;
     }
 
     public Question getQuestion() {
@@ -41,7 +37,6 @@ public class Game {
         }
         output += "Jokers: (5) " + this.fifty.getJokerName() + " (6) " + this.hint.getJokerName() + " (7) " + this.skip.getJokerName() + System.lineSeparator();
         output += "(8) give up and quit the game";
-        output.length();
         System.out.println(output);
     }
 
@@ -49,8 +44,8 @@ public class Game {
         return this.question.rightAnswer == answer;
     }
 
-    public String printRightAnswer() {
-        return this.question.answers[this.question.rightAnswer - 1];
+    public void printRightAnswer() {
+        System.out.println(this.question.answers[this.question.rightAnswer - 1]);
     }
 
     public void addQuestionNumber() {
@@ -80,7 +75,7 @@ public class Game {
     }
 
     public boolean End() {
-        return this.questionNumber == this.maxQuestions;
+        return this.questionNumber - 1 == this.maxQuestions;
     }
 
     public void printVictory() {
@@ -126,7 +121,7 @@ public class Game {
         if (this.hint.isAvailable()) {
             System.out.println("You selected the hint joker.");
             System.out.println("Hint: " + this.question.hint);
-            System.out.println("Hint joker not fully implemented.");
+            System.out.println("(Hint joker not fully implemented...)");
             this.hint.setAvailable(false);
         } else {
             System.out.println("You already used the hint joker.");
