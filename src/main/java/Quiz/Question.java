@@ -19,40 +19,8 @@ public class Question {
         this.hint = q.hint;
     }
 
-    public String printQuestion() {
-        String output = "";
-        output += this.question + System.lineSeparator();
-        for(int i = 0; i < this.answers.length; i++) {
-            output += "(" + (i+1) + ") " + this.answers[i] + System.lineSeparator();
-        }
-        output += "\n(5) give up and quit the game\n";
-        return output;
-    }
-
-    public boolean checkAnswer(int answer) {
-        return this.rightAnswer == answer;
-    }
-
-    public String printRightAnswer() {
-        return this.answers[this.rightAnswer - 1];
-    }
-
     public int getDifficulty() {
         return this.difficulty;
     }
 
-    public void useFifty() {
-        if ((rightAnswer == 1) || (rightAnswer == 4)) {
-            answers[1] = "";
-            answers[2] = "";
-        }
-        else {
-            answers[0] = "";
-            answers[3] = "";
-        }
-    }
-
-    public String getHint() {
-        return hint;
-    }
 }

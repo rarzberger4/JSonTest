@@ -2,6 +2,7 @@ package Quiz;
 
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Game {
 
@@ -10,8 +11,10 @@ public class Game {
     private int questionNumber;
     private int points;
     private Player player;
+    private Question question;
     private Joker1 hint = new Joker1("Hint");
     private Joker1 fifty = new Joker1("50/50");
+    private Joker1 skip = new Joker1("Skip question");
 
 
     public Game(Questionnaire questionnaire, int maxQuestions, String playerName) {
@@ -22,11 +25,32 @@ public class Game {
         this.player = new Player(playerName, 0, "");
         Joker1 hint = this.hint;
         Joker1 fifty = this.fifty;
+        Joker1 skip = this.skip;
     }
 
     public Question getQuestion() {
         int difficulty = (int) Math.ceil((float)this.questionNumber/(float)this.maxQuestions*3);
+        this.question = this.questionnaire.randomQuestion(difficulty);
         return this.questionnaire.randomQuestion(difficulty);
+    }
+
+    public String printQuestion() {
+        String output = this.question.question + System.lineSeparator();
+        for(int i = 0; i < this.question.answers.length; i++) {
+            output += "(" + (i+1) + ") " + this.question.answers[i] + System.lineSeparator();
+        }
+        output += "Jokers: (5) " + this.fifty.getJokerName() + " (6) " + this.hint.getJokerName() + " (7) " + this.skip.getJokerName() + System.lineSeparator();
+        output += "(8) give up and quit the game" + System.lineSeparator();
+        output.length();
+        return output;
+    }
+
+    public boolean checkAnswer(int answer) {
+        return this.question.rightAnswer == answer;
+    }
+
+    public String printRightAnswer() {
+        return this.question.answers[this.question.rightAnswer - 1];
     }
 
     public void addQuestionNumber() {
@@ -82,8 +106,18 @@ public class Game {
     }
 
     public void useFiftyFifty() {
+        if (this.fifty.isAvailable()) {
+            ArrayList<Integer> a = new ArrayList<Integer>(List.of(0,1,2,3));
+            a.remove(this.question.rightAnswer-1);  //remove index of right answer --> indices of 3 wrong answers remain
+            a.remove((int) (Math.random() * 3));        //remove random index of 1 of 3 remaining wrong answer --> indices of 2 wrong answers remain
+            for (int i: a) {
+                this.question.answers[i] = "";      // set values of 2 remaining wrong answers to ""
+                }
+            this.fifty.setAvailable(false);
+        } else {
+            System.out.println("You already used this joker.");
+        }
 
-        this.fifty.setAvailable(false);
     }
 
 

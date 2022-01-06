@@ -1,9 +1,7 @@
 package Quiz;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.stream.IntStream;
 
 public class Program {
 
@@ -37,34 +35,49 @@ public class Program {
                 myGame.addQuestionNumber();
                 Question question = myGame.getQuestion();
                 System.out.println(myGame.printQuestionNumber());
-                System.out.print(question.printQuestion());
-                while (!scanner.hasNext("[12345]")) {
+                System.out.print(myGame.printQuestion());
+                while (!scanner.hasNext("[12345678]")) {
                     System.out.println("Choose a valid answer");
                     scanner.nextLine();
                 }
                 int selectedAnswer = Integer.parseInt(scanner.nextLine().trim());
-                if(selectedAnswer == 5){
-                    System.out.println("Are you sure you want to give up? Your final score would be " + myGame.getPoints() + ". \n(1) Yes\n(2) No");
-                    while (!scanner.hasNext("[12]")) {
-                        System.out.println("Choose a valid answer");
-                        scanner.nextLine();
-                    }
-                    int answer = Integer.parseInt(scanner.nextLine().trim());
-                    if(answer == 1){
-                        h.updateHighscore(myGame.getPlayerName(), myGame.getPoints());
-                        System.out.println("You quit the game.");
-                        return;
-                    }
-                } else if (question.checkAnswer(selectedAnswer)) {
-                    System.out.println("Correct!");
-                    myGame.addPoints();
-                    s.playPosSound();
-                } else {
-                    System.out.print("Wrong... Correct answer: ");
-                    System.out.println(question.printRightAnswer());
-                    myGame.deductPoints();
-                    s.playNegSound();
+                switch (selectedAnswer) {
+                    case 1 | 2 | 3 | 4:
+                        if (myGame.checkAnswer(selectedAnswer)) {
+                            System.out.println("Correct!");
+                            myGame.addPoints();
+                            s.playPosSound();
+                        } else {
+                            System.out.print("Wrong... Correct answer: ");
+                            System.out.println(myGame.printRightAnswer());
+                            myGame.deductPoints();
+                            s.playNegSound();
+                        }
+                        break;
+                    case 5:
+                        System.out.println("you chose 50/50");
+                        myGame.useFiftyFifty();
+                        System.out.println(myGame.printQuestionNumber());
+                        System.out.print(myGame.printQuestion());
+                        break;
+                    case 6:
+                        System.out.println("you chose hint");
+                        break;
+                    case 8:
+                        System.out.println("Are you sure you want to give up? Your final score would be " + myGame.getPoints() + ". \n(1) Yes\n(2) No");
+                        while (!scanner.hasNext("[12]")) {
+                            System.out.println("Choose a valid answer");
+                            scanner.nextLine();
+                        }
+                        int answer = Integer.parseInt(scanner.nextLine().trim());
+                        if (answer == 1){
+                            h.updateHighscore(myGame.getPlayerName(), myGame.getPoints());
+                            System.out.println("You quit the game.");
+                            return;
+                        }
+                        break;
                 }
+
                 System.out.println(myGame.printStatus());
             }
             h.updateHighscore(myGame.getPlayerName(), myGame.getPoints());
