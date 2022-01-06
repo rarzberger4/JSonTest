@@ -45,7 +45,7 @@
     "answer": 1
   },
   {
-    "question": "Was war der Orginaltitel von Pride & Prejudice von Jane Austen",
+    "question": "Was war der Orginaltitel von Pride & Prejudice von Jane Austen?",
     "answer1": "Vanity & Pride",
     "answer2": "Longbourn",
     "answer3": "A Story about Elizabeth Bennet",
@@ -54,7 +54,7 @@
     "answer": 4
   },
   {
-    "question": "Welches Land grenzt an die Slowakei, die Tschechische Republik, die Ukraine und Deutschland",
+    "question": "Welches Land grenzt an die Slowakei, die Tschechische Republik, die Ukraine und Deutschland?",
     "answer1": "Frankreich",
     "answer2": "Polen",
     "answer3": "Österreich",
@@ -126,7 +126,7 @@
     "answer": 3
   },
   {
-    "question": "Wie heißt der neueste Disney Film (05.12.2021) ?",
+    "question": "Wie heißt der neueste Disney Film (05.12.2021)?",
     "answer1": "Red",
     "answer2": "Coco",
     "answer3": "Encanto",
@@ -137,7 +137,7 @@
   {
     "question": "Wieviele Knochen hat der ausgewachsene Mensch?",
     "answer1": "206 - 214",
-    "answer2": 300,
+    "answer2": "300",
     "answer3": "140 - 145",
     "answer4": "283 - 286",
     "difficulty": 3,
@@ -153,7 +153,7 @@
     "answer": 4
   },
   {
-    "question": "Wieviele Bananen muss der Körper innerhalb von 8h essen, um von der Radioaktivität beeinträchtigt zu werden?",
+    "question": "Wieviele Bananen muss der Mensch innerhalb von 8h essen, um von Radioaktivität beeinträchtigt zu werden?",
     "answer1": 1000,
     "answer2": 600,
     "answer3": 1500,
@@ -162,7 +162,7 @@
     "answer": 1
   },
   {
-    "question": "Wie heißt der Übungsleiter von Programmieren Gruppe 1 (2021W)",
+    "question": "Wie heißt der Übungsleiter von Programmieren Gruppe 1 (2021W)?",
     "answer1": "Felix",
     "answer2": "Leon",
     "answer3": "Tom",
@@ -172,10 +172,10 @@
   },
   {
     "question": "Wie lautet die Corona Hotline in Österreich?",
-    "answer1": 1054,
-    "answer2": 4015,
-    "answer3": 1540,
-    "answer4": 1450,
+    "answer1": "1054",
+    "answer2": "4015",
+    "answer3": "1540",
+    "answer4": "1450",
     "difficulty": 1,
     "answer": 4
   },
@@ -234,7 +234,7 @@
     "answer": 1
   },
   {
-    "question": "Wo ist Napoleon Bonaparte geboren?",
+    "question": "Wo wurde Napoleon Bonaparte geboren?",
     "answer1": "Paris",
     "answer2": "Marseille",
     "answer3": "Catania",
@@ -243,11 +243,11 @@
     "answer": 4
   },
   {
-    "question": "Piraten trugen einen Augenklappe, damit sie:",
-    "answer1": "Dunkelheit besser sehen konnten",
-    "answer2": "um Wunden zu bedecken",
-    "answer3": "sich vor der Sonne schützen können",
-    "answer4": "für Mode",
+    "question": "Piraten trugen einen Augenklappe ...",
+    "answer1": "um in der Dunkelheit besser sehen zu können.",
+    "answer2": "um ihre Wunden zu bedecken.",
+    "answer3": "um sich vor der Sonne zu schützen.",
+    "answer4": "aus Modezwecken.",
     "difficulty": 1,
     "answer": 1
   },
@@ -298,12 +298,12 @@
   },
   {
     "question": "Wie viele Herzen hat ein Oktopus?",
-    "answer1": "Zwei",
-    "answer2": "Vier",
-    "answer3": "Eins",
-    "answer4": "Drei",
+    "answer1": "Eins",
+    "answer2": "Zwei",
+    "answer3": "Drei",
+    "answer4": "Vier",
     "difficulty": 3,
-    "answer": 4
+    "answer": 3
   },
   {
     "question": "Wie viel Wasser gibt es auf der Erde pro Mensch?",
@@ -396,11 +396,11 @@
     "answer": 4
   },
   {
-    "question": "In welchem ​​Spiel musst du mit den Flusspferden so viele Murmeln wie möglich sammeln?",
-    "answer1": "Hungrige hungrige Flusspferde",
-    "answer2": "Hungrige hungrige Hippos",
-    "answer3": "Murmelnde murmelnde Flusspferde",
-    "answer4": "Gefräßige gefräßige Hippos",
+    "question": "In welchem Spiel musst du mit den Flusspferden so viele Murmeln wie möglich sammeln?",
+    "answer1": "Hungrige, hungrige Flusspferde",
+    "answer2": "Hungrige, hungrige Hippos",
+    "answer3": "Murmelnde, murmelnde Flusspferde",
+    "answer4": "Gefräßige, gefräßige Hippos",
     "difficulty": 2,
     "answer": 1
   },
