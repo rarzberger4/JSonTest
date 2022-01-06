@@ -2,11 +2,12 @@ package Quiz;
 
 
 public class Question {
-    private String question;
-    private String[] answers = new String[4];
-    private int rightAnswer;
-    private int difficulty;
-    private String hint;
+
+    private final String question;
+    private final String[] answers = new String[4];
+    private final int rightAnswer;
+    private final int difficulty;
+    private final String hint;
 
     public Question (Questiont q){
         this.question = q.question;

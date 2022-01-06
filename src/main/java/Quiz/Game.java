@@ -5,15 +5,15 @@ import java.util.List;
 
 public class Game {
 
-    private Questionnaire questionnaire;
+    private final Questionnaire questionnaire;
     private final int maxQuestions;
     private int questionNumber;
     private int points;
-    private Player player;
+    private final Player player;
     private Question question;
-    private Joker hint = new Joker("Hint");
-    private Joker fifty = new Joker("50/50");
-    private Joker skip = new Joker("Skip question");
+    private final Joker hint = new Joker("Hint");
+    private final Joker fifty = new Joker("50/50");
+    private final Joker skip = new Joker("Skip question");
 
 
     public Game(Questionnaire questionnaire, int maxQuestions, String playerName) {
@@ -79,7 +79,6 @@ public class Game {
     }
 
     public void printVictory() {
-        String output = "";
         int maxPoints = 0;
         if (this.maxQuestions == 9) {
             maxPoints = 108;
@@ -88,7 +87,7 @@ public class Game {
         } else if (this.maxQuestions == 15) {
             maxPoints = 290;
         }
-        output = this.points + " of " + maxPoints + " Points!";
+        String output = this.points + " of " + maxPoints + " Points!";
         if (this.points < this.maxQuestions *0.5) {
             output = "You need some practice. You only have " + output;
         } else if (this.points < this.maxQuestions *0.8) {
@@ -112,7 +111,7 @@ public class Game {
     public void useFiftyFifty() {
         if (this.fifty.isAvailable()) {
             System.out.println("You selected the 50/50 joker.");
-            ArrayList<Integer> a = new ArrayList<Integer>(List.of(0,1,2,3));
+            ArrayList<Integer> a = new ArrayList<>(List.of(0, 1, 2, 3));
             a.remove(this.question.getRightAnswer()-1);  //remove index of right answer --> indices of 3 wrong answers remain
             a.remove((int) (Math.random() * 3));        //remove random index of 1 of 3 remaining wrong answer --> indices of 2 wrong answers remain
             for (int i: a) {
