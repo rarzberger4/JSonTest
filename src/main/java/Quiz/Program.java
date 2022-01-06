@@ -1,7 +1,9 @@
 package Quiz;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
 public class Program {
 
@@ -9,7 +11,6 @@ public class Program {
         Questionnaire q = new Questionnaire();
         Highscore h = new Highscore();
         Sounds s = new Sounds();
-        Joker jokers = new Joker();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome!" + System.lineSeparator() + "(1) Show Highscore" + System.lineSeparator() + "(2) Play game");
         /*
@@ -31,14 +32,13 @@ public class Program {
                 scanner.nextLine();
             }
             int rounds = Integer.parseInt(scanner.nextLine().trim());
-            Game myGame = new Game(q, (rounds+2)*3, name, jokers);
+            Game myGame = new Game(q, (rounds+2)*3, name);
             while(!myGame.End()) {
                 myGame.addQuestionNumber();
                 Question question = myGame.getQuestion();
                 System.out.println(myGame.printQuestionNumber());
                 System.out.print(question.printQuestion());
-                System.out.println(jokers.getJokers() + System.lineSeparator());
-                while (!scanner.hasNext("[12345678]")) {
+                while (!scanner.hasNext("[12345]")) {
                     System.out.println("Choose a valid answer");
                     scanner.nextLine();
                 }
@@ -59,70 +59,10 @@ public class Program {
                     System.out.println("Correct!");
                     myGame.addPoints();
                     s.playPosSound();
-                } else if ((selectedAnswer == 6) && (!jokers.getFifty().equals(""))) {
-                    jokers.useFifty();
-                    question.useFifty();
-                    System.out.println("50/50 Joker used!");
-                    System.out.println(question.printQuestion());
-                    selectedAnswer = Integer.parseInt(scanner.nextLine().trim());
-                    if(selectedAnswer == 5){
-                        h.updateHighscore(myGame.getPlayerName(), myGame.getPoints());
-                        System.out.println("You quit the game.");
-                        return;
-                    } else if (question.checkAnswer(selectedAnswer)) {
-                        System.out.println("Correct!");
-                        myGame.addPoints();
-                        s.playPosSound();
-                    } else {
-                        System.out.print("Wrong... Correct answer: ");
-                        System.out.println(question.printRightAnswer());
-                        s.playNegSound();
-                        myGame.deductPoints();
-                    }
-                } else if ((selectedAnswer == 7) && (!jokers.getHint().equals(""))) {
-                    jokers.useHint();
-                    System.out.println("Hint Joker used!");
-                    System.out.println("HINT: " + question.getHint());
-                    System.out.println(question.printQuestion());
-                    selectedAnswer = Integer.parseInt(scanner.nextLine().trim());
-                    if(selectedAnswer == 5){
-                        h.updateHighscore(myGame.getPlayerName(), myGame.getPoints());
-                        System.out.println("You quit the game. Your score of " + myGame.getPoints() + " points was saved to highscore.");
-                        return;
-                    } else if (question.checkAnswer(selectedAnswer)) {
-                        System.out.println("Correct!");
-                        myGame.addPoints();
-                        s.playPosSound();
-                    } else {
-                        System.out.print("Wrong... Correct answer: ");
-                        System.out.println(question.printRightAnswer());
-                        s.playNegSound();
-                    }
-                } else if ((selectedAnswer == 8) && (!jokers.getReplace().equals(""))) {
-                    jokers.useReplace();
-                    System.out.println("Joker Skip Question used! Skipping question..." + System.lineSeparator());
-                    question = myGame.getQuestion();
-                    System.out.println(myGame.printQuestionNumber());
-                    System.out.print(question.printQuestion());
-                    selectedAnswer = Integer.parseInt(scanner.nextLine().trim());
-                    if(selectedAnswer == 5){
-                        h.updateHighscore(myGame.getPlayerName(), myGame.getPoints());
-                        System.out.println("You quit the game. Your score of " + myGame.getPoints() + " points was saved to highscore.");
-                        return;
-                    } else if (question.checkAnswer(selectedAnswer)) {
-                        System.out.println("Correct!");
-                        myGame.addPoints();
-                        s.playPosSound();
-                    } else {
-                        System.out.print("Wrong... Correct answer: ");
-                        System.out.println(question.printRightAnswer());
-                        s.playNegSound();
-                    }
-
-                }
-                else {
+                } else {
                     System.out.print("Wrong... Correct answer: ");
                     System.out.println(question.printRightAnswer());
+                    myGame.deductPoints();
                     s.playNegSound();
                 }
                 System.out.println(myGame.printStatus());
