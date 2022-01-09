@@ -23,10 +23,18 @@ public class Game {
         this.player = new Player(playerName, 0, "");
     }
 
+    public void addQuestionNumber() {
+        this.questionNumber++;
+    }
+
     public Question getQuestion() {
         int difficulty = (int) Math.ceil((float)this.questionNumber/(float)this.maxQuestions*3);
         this.question = this.questionnaire.randomQuestion(difficulty);
         return this.questionnaire.randomQuestion(difficulty);
+    }
+
+    public void printQuestionNumber() {
+        System.out.println("Question number " + this.questionNumber + " of " + this.maxQuestions + ":");
     }
 
     public void printQuestion() {
@@ -47,10 +55,6 @@ public class Game {
         System.out.println(this.question.getAnswers()[this.question.getRightAnswer() - 1]);
     }
 
-    public void addQuestionNumber() {
-        this.questionNumber++;
-    }
-
     public void addPoints() {
         int difficulty = (int) Math.ceil((float)this.questionNumber/(float)this.maxQuestions*3);
         this.points += this.questionNumber * difficulty;
@@ -67,10 +71,6 @@ public class Game {
 
     public void printStatus() {
         System.out.println("Current points: " + this.points + System.lineSeparator());
-    }
-
-    public void printQuestionNumber() {
-        System.out.println("Question number " + this.questionNumber + " of " + this.maxQuestions + ":");
     }
 
     public boolean End() {
@@ -119,7 +119,7 @@ public class Game {
             this.printQuestion();
             this.fifty.setAvailable(false);
         } else {
-            System.out.println("You already used the 50/50-joker.");
+            System.out.println("You already used the 50/50 joker.");
         }
 
     }
