@@ -36,9 +36,12 @@ public class Program {
         }
         int rounds = Integer.parseInt(scanner.nextLine().trim());
         Game myGame = new Game(q, (rounds + 2) * 3, name);
-        Question question = newQuestion(myGame);
         int selectedAnswer;
         while (!myGame.End()) {
+            myGame.addQuestionNumber();
+            Question question = myGame.getQuestion();
+            myGame.printQuestionNumber();
+            myGame.printQuestion();
             while (!scanner.hasNext("[12345678]")) {
                 System.out.println("Choose a valid answer");
                 scanner.nextLine();
@@ -47,7 +50,6 @@ public class Program {
             recheckQuit(h, myGame, scanner, selectedAnswer);
             if (selectedAnswer == 1 || selectedAnswer == 2 || selectedAnswer == 3 || selectedAnswer == 4) {
                 checkAnswer(s, selectedAnswer, myGame);
-                question = newQuestion(myGame);
             } else if (selectedAnswer == 5) {
                 myGame.useFiftyFifty();
                 while (!scanner.hasNext("[12345678]")) {
@@ -57,7 +59,6 @@ public class Program {
                 selectedAnswer = Integer.parseInt(scanner.nextLine().trim());
                 recheckQuit(h, myGame, scanner, selectedAnswer);
                 checkAnswer(s, selectedAnswer, myGame);
-                question = newQuestion(myGame);
             } else if (selectedAnswer == 6) {
                 myGame.useHint();
                 while (!scanner.hasNext("[12345678]")) {
@@ -67,7 +68,6 @@ public class Program {
                 selectedAnswer = Integer.parseInt(scanner.nextLine().trim());
                 recheckQuit(h, myGame, scanner, selectedAnswer);
                 checkAnswer(s, selectedAnswer, myGame);
-                question = newQuestion(myGame);
             } else if (selectedAnswer == 7){
                 myGame.useSkip();
                 while (!scanner.hasNext("[12345678]")) {
@@ -77,7 +77,6 @@ public class Program {
                 selectedAnswer = Integer.parseInt(scanner.nextLine().trim());
                 recheckQuit(h, myGame, scanner, selectedAnswer);
                 checkAnswer(s, selectedAnswer, myGame);
-                question = newQuestion(myGame);
             }
         }
         h.updateHighscore(myGame.getPlayerName(), myGame.getPoints());

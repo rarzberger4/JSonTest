@@ -140,7 +140,6 @@ public class Game {
             System.out.println("You selected the skip joker. Here is your new question:");
             this.skip.setAvailable(false);
             this.question = this.getQuestion();
-            this.printQuestionNumber();
             this.printQuestion();
         } else {
             System.out.println("You already used the skip joker.");
