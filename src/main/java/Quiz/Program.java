@@ -47,7 +47,7 @@ public class Program {
                 scanner.nextLine();
             }
             selectedAnswer = Integer.parseInt(scanner.nextLine().trim());
-            recheckQuit(h, myGame, scanner, selectedAnswer);
+            selectedAnswer = recheckQuit(h, myGame, scanner, selectedAnswer);
             if (selectedAnswer == 1 || selectedAnswer == 2 || selectedAnswer == 3 || selectedAnswer == 4) {
                 checkAnswer(s, selectedAnswer, myGame);
             } else if (selectedAnswer == 5) {
@@ -57,7 +57,7 @@ public class Program {
                     scanner.nextLine();
                 }
                 selectedAnswer = Integer.parseInt(scanner.nextLine().trim());
-                recheckQuit(h, myGame, scanner, selectedAnswer);
+                selectedAnswer = recheckQuit(h, myGame, scanner, selectedAnswer);
                 checkAnswer(s, selectedAnswer, myGame);
             } else if (selectedAnswer == 6) {
                 myGame.useHint();
@@ -66,7 +66,7 @@ public class Program {
                     scanner.nextLine();
                 }
                 selectedAnswer = Integer.parseInt(scanner.nextLine().trim());
-                recheckQuit(h, myGame, scanner, selectedAnswer);
+                selectedAnswer = recheckQuit(h, myGame, scanner, selectedAnswer);
                 checkAnswer(s, selectedAnswer, myGame);
             } else if (selectedAnswer == 7){
                 myGame.useSkip();
@@ -75,7 +75,7 @@ public class Program {
                     scanner.nextLine();
                 }
                 selectedAnswer = Integer.parseInt(scanner.nextLine().trim());
-                recheckQuit(h, myGame, scanner, selectedAnswer);
+                selectedAnswer = recheckQuit(h, myGame, scanner, selectedAnswer);
                 checkAnswer(s, selectedAnswer, myGame);
             }
         }
@@ -84,7 +84,6 @@ public class Program {
     }
 
     public static Question newQuestion(Game myGame) {
-        myGame.addQuestionNumber();
         Question question = myGame.getQuestion();
         myGame.printQuestionNumber();
         myGame.printQuestion();
@@ -105,7 +104,7 @@ public class Program {
         myGame.printStatus();
     }
 
-    public static void recheckQuit(Highscore h, Game myGame, Scanner scanner, int selectedAnswer) throws IOException {
+    public static int recheckQuit(Highscore h, Game myGame, Scanner scanner, int selectedAnswer) throws IOException {
         if (selectedAnswer == 8) {
             System.out.println("Are you sure you want to give up? Your final score would be " + myGame.getPoints() + ". \n(1) Yes\n(2) No");
             while (!scanner.hasNext("[12]")) {
@@ -117,8 +116,15 @@ public class Program {
                 h.updateHighscore(myGame.getPlayerName(), myGame.getPoints());
                 System.out.println("You quit the game.");
                 System.exit(0);
+            } else {
+                while (!scanner.hasNext("[1234567]")) {
+                    System.out.println("Choose a valid answer");
+                    scanner.nextLine();
+                }
+                selectedAnswer = Integer.parseInt(scanner.nextLine().trim());
             }
         }
+        return selectedAnswer;
     }
 
 }
