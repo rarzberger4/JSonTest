@@ -19,10 +19,6 @@ public class Question {
         this.hint = q.getHint();
     }
 
-    public int getDifficulty() {
-        return this.difficulty;
-    }
-
     public String getQuestion() {
         return question;
     }
@@ -33,6 +29,10 @@ public class Question {
 
     public int getRightAnswer() {
         return rightAnswer;
+    }
+
+    public int getDifficulty() {
+        return this.difficulty;
     }
 
     public String getHint() {

@@ -38,7 +38,7 @@ public class Program {
         Game myGame = new Game(q, (rounds + 2) * 3, name);
         while (!myGame.End()) {
             myGame.addQuestionNumber();
-            Question question = myGame.getQuestion();
+            myGame.getQuestion();
             myGame.printQuestionNumber();
             myGame.printQuestion();
             int selectedAnswer = checkInput(h, myGame, scanner);
