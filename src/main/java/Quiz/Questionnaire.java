@@ -1,22 +1,18 @@
 package Quiz;
 
 import com.google.gson.Gson;
-
 import java.io.IOException;
 import java.io.Reader;
 import java.lang.reflect.Type;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Questionnaire {
 
     private Questiont[] questt;
-    private ArrayList<Question> questionnaire = new ArrayList<>();
+    private final ArrayList<Question> questionnaire = new ArrayList<>();
 
     public Questionnaire() {
         Gson gson = new Gson();
@@ -27,11 +23,9 @@ public class Questionnaire {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         for(Questiont gt : questt){
             questionnaire.add(new Question(gt));
         }
-
     }
 
     public Question randomQuestion(int difficulty) {
@@ -41,8 +35,7 @@ public class Questionnaire {
                 filtered.add(q);
             }
         }
-        double help = Math.random()*filtered.size();
-        int index = (int) help;
+        int index = (int) (Math.random() * filtered.size());
         questionnaire.remove(filtered.get(index));
         return filtered.get(index);
     }

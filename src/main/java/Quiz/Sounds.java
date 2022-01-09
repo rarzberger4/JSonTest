@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Sounds {
 
-    private List<File> sounds = new ArrayList<>();
+    private final List<File> sounds = new ArrayList<>();
 
     public Sounds() {
         sounds.add(new File("mixkit-positive-notification-951.wav"));
@@ -31,10 +31,10 @@ public class Sounds {
 
     public void playPosSound() {
         playSound(sounds.get(0));
-
     }
 
     public void playNegSound() {
         playSound(sounds.get(1));
     }
+
 }

@@ -1,55 +1,38 @@
 package Quiz;
 
-
 public class Question {
-    public String question;
-    public String[] answers = new String[4];
-    public int rightAnswer;
-    public int difficulty;
-    public String hint;
+
+    private final String question;
+    private final String[] answers = new String[4];
+    private final int rightAnswer;
+    private final int difficulty;
+    private final String hint;
 
     public Question (Questiont q){
-        this.question = q.question;
-        this.answers[0] = q.answer1;
-        this.answers[1] = q.answer2;
-        this.answers[2] = q.answer3;
-        this.answers[3] = q.answer4;
-        this.rightAnswer = q.answer;
-        this.difficulty = q.difficulty;
-        this.hint = q.hint;
-    }
-
-    public String printQuestion() {
-        String output = "";
-        output += this.question + System.lineSeparator();
-        for(int i = 0; i < this.answers.length; i++) {
-            output += "(" + (i+1) + ") " + this.answers[i] + System.lineSeparator();
-        }
-        output += "\n(5) give up and quit the game\n";
-        return output;
-    }
-
-    public boolean checkAnswer(int answer) {
-        return this.rightAnswer == answer;
-    }
-
-    public String printRightAnswer() {
-        return this.answers[this.rightAnswer - 1];
+        this.question = q.getQuestion();
+        this.answers[0] = q.getAnswer1();
+        this.answers[1] = q.getAnswer2();
+        this.answers[2] = q.getAnswer3();
+        this.answers[3] = q.getAnswer4();
+        this.rightAnswer = q.getAnswer();
+        this.difficulty = q.getDifficulty();
+        this.hint = q.getHint();
     }
 
     public int getDifficulty() {
         return this.difficulty;
     }
 
-    public void useFifty() {
-        if ((rightAnswer == 1) || (rightAnswer == 4)) {
-            answers[1] = "";
-            answers[2] = "";
-        }
-        else {
-            answers[0] = "";
-            answers[3] = "";
-        }
+    public String getQuestion() {
+        return question;
+    }
+
+    public String[] getAnswers() {
+        return answers;
+    }
+
+    public int getRightAnswer() {
+        return rightAnswer;
     }
 
     public String getHint() {
