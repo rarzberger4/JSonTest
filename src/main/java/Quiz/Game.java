@@ -87,9 +87,9 @@ public class Game {
             maxPoints = 290;
         }
         String output = this.points + " of " + maxPoints + " Points!";
-        if (this.points < this.maxQuestions *0.5) {
+        if (this.points < maxPoints *0.5) {
             output = "You need some practice. You only have " + output;
-        } else if (this.points < this.maxQuestions *0.8) {
+        } else if (this.points < maxPoints *0.8) {
             output = "Good job! You have " + output;
         } else if (this.points < maxPoints) {
             output = "Excellent! You have " + output;
