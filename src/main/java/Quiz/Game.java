@@ -135,13 +135,17 @@ public class Game {
         }
     }
 
-    public void useSkip() {
+    public Question useSkip() {
         if (this.skip.isAvailable()) {
             System.out.println("You selected the skip joker. Here is your new question:");
             this.skip.setAvailable(false);
+            this.question = this.getQuestion();
+            this.printQuestionNumber();
+            this.printQuestion();
         } else {
             System.out.println("You already used the skip joker.");
         }
+        return this.question;
     }
 
 }

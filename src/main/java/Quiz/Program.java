@@ -71,10 +71,7 @@ public class Program {
                 checkAnswer(s, selectedAnswer, myGame);
                 myGame.printStatus();
             } else if (selectedAnswer == 7){
-                myGame.useSkip();
-                question = myGame.getQuestion();
-                myGame.printQuestionNumber();
-                myGame.printQuestion();
+                question = myGame.useSkip();
                 while (!scanner.hasNext("[12345678]")) {
                     System.out.println("Choose a valid answer");
                     scanner.nextLine();
