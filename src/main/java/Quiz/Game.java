@@ -11,10 +11,9 @@ public class Game {
     private int points;
     private final Player player;
     private Question question;
-    private final Joker hint = new Joker("Hint");
     private final Joker fifty = new Joker("50/50");
+    private final Joker hint = new Joker("Hint");
     private final Joker skip = new Joker("Skip question");
-
 
     public Game(Questionnaire questionnaire, int maxQuestions, String playerName) {
         this.questionnaire = questionnaire;

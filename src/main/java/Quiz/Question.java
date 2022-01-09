@@ -10,14 +10,14 @@ public class Question {
     private final String hint;
 
     public Question (Questiont q){
-        this.question = q.question;
-        this.answers[0] = q.answer1;
-        this.answers[1] = q.answer2;
-        this.answers[2] = q.answer3;
-        this.answers[3] = q.answer4;
-        this.rightAnswer = q.answer;
-        this.difficulty = q.difficulty;
-        this.hint = q.hint;
+        this.question = q.getQuestion();
+        this.answers[0] = q.getAnswer1();
+        this.answers[1] = q.getAnswer2();
+        this.answers[2] = q.getAnswer3();
+        this.answers[3] = q.getAnswer4();
+        this.rightAnswer = q.getAnswer();
+        this.difficulty = q.getDifficulty();
+        this.hint = q.getHint();
     }
 
     public int getDifficulty() {

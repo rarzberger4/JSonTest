@@ -2,9 +2,9 @@ package Quiz;
 
 public class Player {
 
-    private String playerName;
-    private int Score;
-    private String timeStamp;
+    private final String playerName;
+    private final int Score;
+    private final String timeStamp;
 
     public Player(String playerName, int score, String timeStamp) {
         this.playerName = playerName;
