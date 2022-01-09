@@ -3,9 +3,10 @@ package Quiz;
 import java.io.IOException;
 import java.util.Scanner;
 
+
 public class Program {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException {  //This is a test comment
         Questionnaire q = new Questionnaire();
         Highscore h = new Highscore();
         Sounds s = new Sounds();
@@ -87,7 +88,7 @@ public class Program {
                     selectedAnswer = Integer.parseInt(scanner.nextLine().trim());
                     if(selectedAnswer == 5){
                         h.updateHighscore(myGame.getPlayerName(), myGame.getPoints());
-                        System.out.println("You quit the game. Your score of " + myGame.getPoints() + " points was saved to highscore.");
+                        System.out.println("You quit the game. Your score of " + myGame.getPoints() + " points was saved to Highscore.");
                         return;
                     } else if (question.checkAnswer(selectedAnswer)) {
                         System.out.println("Correct!");
@@ -107,7 +108,7 @@ public class Program {
                     selectedAnswer = Integer.parseInt(scanner.nextLine().trim());
                     if(selectedAnswer == 5){
                         h.updateHighscore(myGame.getPlayerName(), myGame.getPoints());
-                        System.out.println("You quit the game. Your score of " + myGame.getPoints() + " points was saved to highscore.");
+                        System.out.println("You quit the game. Your score of " + myGame.getPoints() + " points was saved to Highscore.");
                         return;
                     } else if (question.checkAnswer(selectedAnswer)) {
                         System.out.println("Correct!");
