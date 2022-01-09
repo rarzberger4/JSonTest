@@ -36,14 +36,13 @@ public class Program {
         }
         int rounds = Integer.parseInt(scanner.nextLine().trim());
         Game myGame = new Game(q, (rounds + 2) * 3, name);
-        int selectedAnswer;
         while (!myGame.End()) {
             myGame.addQuestionNumber();
             Question question = myGame.getQuestion();
             myGame.printQuestionNumber();
             myGame.printQuestion();
-            selectedAnswer = checkInput(h, myGame, scanner);
-            if (selectedAnswer == 1 || selectedAnswer == 2 || selectedAnswer == 3 || selectedAnswer == 4) {
+            int selectedAnswer = checkInput(h, myGame, scanner);
+            if (selectedAnswer < 5) {
                 checkAnswer(s, selectedAnswer, myGame);
             } else if (selectedAnswer == 5) {
                 myGame.useFiftyFifty();
