@@ -1,6 +1,5 @@
 package Quiz;
 
-
 public class Question {
 
     private final String question;
