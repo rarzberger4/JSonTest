@@ -21,7 +21,6 @@ public class Game {
         this.maxQuestions = maxQuestions;
         this.questionNumber = 0;
         this.points = 0;
-
     }
 
     public void addQuestionNumber() {
