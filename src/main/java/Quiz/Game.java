@@ -15,12 +15,13 @@ public class Game {
     private final Joker hint = new Joker("Hint");
     private final Joker skip = new Joker("Skip question");
 
-    public Game(Questionnaire questionnaire, int maxQuestions, String playerName) {
-        this.questionnaire = questionnaire;
+    public Game(String playerName, int maxQuestions) {
+        this.player = new Player(playerName, 0, "");
+        this.questionnaire = new Questionnaire();
         this.maxQuestions = maxQuestions;
         this.questionNumber = 0;
         this.points = 0;
-        this.player = new Player(playerName, 0, "");
+
     }
 
     public void addQuestionNumber() {

@@ -6,9 +6,7 @@ import java.util.Scanner;
 public class Program {
 
     public static void main(String[] args) throws IOException {
-        Questionnaire q = new Questionnaire();
         Highscore h = new Highscore();
-        Sounds s = new Sounds();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome!" + System.lineSeparator() + "(1) Show Highscore" + System.lineSeparator() + "(2) Play game");
         while (!scanner.hasNext("[12]")) {
@@ -28,14 +26,15 @@ public class Program {
             }
         }
         System.out.println("Enter your name:");
-        String name = scanner.nextLine();
+        String playerName = scanner.nextLine();
         System.out.println("How long do you want to play?\n(1) 9 questions\n(2) 12 questions\n(3) 15 questions");
         while (!scanner.hasNext("[123]")) {
             System.out.println("Choose a valid answer");
             scanner.nextLine();
         }
         int rounds = Integer.parseInt(scanner.nextLine().trim());
-        Game myGame = new Game(q, (rounds + 2) * 3, name);
+        Game myGame = new Game(playerName,(rounds + 2) * 3);
+        Sounds s = new Sounds();
         while (!myGame.End()) {
             myGame.addQuestionNumber();
             myGame.getQuestion();
