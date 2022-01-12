@@ -5,6 +5,7 @@ Project for Grundlagen der Programmierung from:
 * Gallmetzer Nina
 * Arzberger Raphael
 * Fischer Carmen
+* Davidowicz Laura Nurit
 
 ## Aim of the project
 This project should be a CLI based programm that lets the user play a game inspired by "Who want's to be a millionaire". 
