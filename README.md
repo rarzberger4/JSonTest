@@ -24,3 +24,8 @@ Questions can be added to the "Questionnaire.json" in the following format:
     "answer": //integer,
     "hint": "A Hint"
   }
+
+## How to play
+1. execute main in class Program
+2. Follow instructions on screen
+3. Either select answers: 1-4, jockers: 5-7 or quit: 8
