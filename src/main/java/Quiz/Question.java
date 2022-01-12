@@ -1,13 +1,17 @@
+//manages individual question that are asked during the game
+
 package Quiz;
 
 public class Question {
 
+    //CLassvariables
     private final String question;
     private final String[] answers = new String[4];
     private final int rightAnswer;
     private final int difficulty;
     private final String hint;
 
+    //Constructors
     public Question (Questiont q){
         this.question = q.getQuestion();
         this.answers[0] = q.getAnswer1();
@@ -19,6 +23,7 @@ public class Question {
         this.hint = q.getHint();
     }
 
+    //Methods
     public String getQuestion() {
         return question;
     }

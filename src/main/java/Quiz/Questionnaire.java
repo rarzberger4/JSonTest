@@ -1,3 +1,5 @@
+//manages totailty of questions asked at the game
+
 package Quiz;
 
 import com.google.gson.Gson;
@@ -11,9 +13,11 @@ import java.util.List;
 
 public class Questionnaire {
 
+    //Classvariables
     private Questiont[] questt;
     private final ArrayList<Question> questionnaire = new ArrayList<>();
 
+    //Constructors
     public Questionnaire() {
         Gson gson = new Gson();
         try {
@@ -28,6 +32,7 @@ public class Questionnaire {
         }
     }
 
+    //Methods
     public Question randomQuestion(int difficulty) {
         List<Question> filtered = new ArrayList<>();
         for (Question q : questionnaire){
@@ -36,7 +41,7 @@ public class Questionnaire {
             }
         }
         int index = (int) (Math.random() * filtered.size());
-        questionnaire.remove(filtered.get(index));
+        questionnaire.remove(filtered.get(index)); //fixes bug that question are asked more than once
         return filtered.get(index);
     }
 

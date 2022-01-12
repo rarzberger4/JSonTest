@@ -1,3 +1,5 @@
+//allows that highscores can saved between games
+
 package Quiz;
 
 import java.io.*;
@@ -10,8 +12,10 @@ import java.util.List;
 
 public class Highscore {
 
+    //Classvariables
     private List<Player> highscore = new ArrayList<>();
 
+    //Constructor
     public Highscore() {
         if (!Files.exists(Paths.get("Highscore.csv"))) {
             highscore = new ArrayList<>();
@@ -28,6 +32,7 @@ public class Highscore {
         }
     }
 
+    //Methods
     public void printHighscore() {
         highscore.sort((p1, p2) -> p2.getScore() - p1.getScore());
         System.out.println("Player\tScore\tTime");
@@ -36,6 +41,8 @@ public class Highscore {
         }
     }
 
+    //writes current known Highscores into Highscore.csv
+    //Todo: warum if in dieser Funktion?
     public void updateHighscore(String playerName, int score) throws IOException {
         String time = new SimpleDateFormat("yyyy-MM-dd_HH:mm").format(new Timestamp(System.currentTimeMillis()));
         Player p = new Player(playerName, score, time);
@@ -54,6 +61,7 @@ public class Highscore {
             writer.flush();
             writer.close();
         } else {
+            //Todo: umschreiben in enhanced for loop
             for (int i = 0; i < 20; i++) {
                 writer.append(highscore.get(i).getPlayerName());
                 writer.append(",");
