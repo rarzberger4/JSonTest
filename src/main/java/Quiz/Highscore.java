@@ -48,7 +48,7 @@ public class Highscore {
         highscore.add(p);
         highscore.sort((p1, p2) -> p2.getScore() - p1.getScore());
         FileWriter writer = new FileWriter("Highscore.csv");
-        for (int i = 0; i < 20|| i < highscore.size(); i++) {
+        for (int i = 0; i < 20 && i < highscore.size(); i++) {
             writer.append(highscore.get(i).getPlayerName());
             writer.append(",");
             writer.append(String.valueOf(highscore.get(i).getScore()));
@@ -56,7 +56,8 @@ public class Highscore {
             writer.append(highscore.get(i).getTimeStamp());
             writer.append(System.lineSeparator());
         }
-
+        writer.flush();
+        writer.close();
     }
 
 }
