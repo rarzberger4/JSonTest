@@ -1,10 +1,10 @@
-//manages the bare bones of Jockers
+//manages the bare bones of Jokers
 
 package Quiz;
 
 public class Joker {
 
-    //Classvariables
+    //Class variables
     private final String jokerName;
     private boolean available;
 

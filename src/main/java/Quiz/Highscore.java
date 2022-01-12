@@ -1,4 +1,4 @@
-//allows that highscores can saved between games
+//allows that high scores can be saved between games
 
 package Quiz;
 
@@ -12,7 +12,7 @@ import java.util.List;
 
 public class Highscore {
 
-    //Classvariables
+    //Class variables
     private List<Player> highscore = new ArrayList<>();
 
     //Constructor
@@ -41,7 +41,7 @@ public class Highscore {
         }
     }
 
-    //writes current known Highscores into Highscore.csv
+    //writes current known Highscores to Highscore.csv
     //Todo: warum if in dieser Funktion?
     public void updateHighscore(String playerName, int score) throws IOException {
         String time = new SimpleDateFormat("yyyy-MM-dd_HH:mm").format(new Timestamp(System.currentTimeMillis()));

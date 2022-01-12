@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Game {
 
-    //Classvaraibles
+    //Class variables
     private final Questionnaire questionnaire;
     private final int maxQuestions;
     private int questionNumber;
@@ -32,7 +32,7 @@ public class Game {
         this.questionNumber++;
     }
 
-    //Returns question with difficulty appropiate for the progress of the game
+    //Returns question with difficulty appropriate for the progress of the game
     public Question getQuestion() {
         int difficulty = (int) Math.ceil((float)this.questionNumber/(float)this.maxQuestions*3);
         this.question = this.questionnaire.randomQuestion(difficulty);
@@ -83,7 +83,7 @@ public class Game {
         return this.questionNumber == this.maxQuestions;
     }
 
-    //prints Victory message, differnt depending on points
+    //prints Victory message, different depending on points
     public void printVictory() {
         int maxPoints = 0;
         if (this.maxQuestions == 9) {

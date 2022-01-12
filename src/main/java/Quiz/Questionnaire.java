@@ -1,4 +1,4 @@
-//manages totailty of questions asked at the game
+//manages totality of questions asked at the game
 
 package Quiz;
 
@@ -13,7 +13,7 @@ import java.util.List;
 
 public class Questionnaire {
 
-    //Classvariables
+    //Class variables
     private Questiont[] questt;
     private final ArrayList<Question> questionnaire = new ArrayList<>();
 

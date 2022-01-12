@@ -4,7 +4,7 @@ package Quiz;
 
 public class Player {
 
-    //Classvariables
+    //Class variables
     private final String playerName;
     private final int Score;
     private final String timeStamp;

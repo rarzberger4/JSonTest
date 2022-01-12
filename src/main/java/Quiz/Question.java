@@ -4,7 +4,7 @@ package Quiz;
 
 public class Question {
 
-    //CLassvariables
+    //CLass variables
     private final String question;
     private final String[] answers = new String[4];
     private final int rightAnswer;

@@ -1,4 +1,4 @@
-//Helperclass to allows for sound to play when aswers are right/wrong
+//Helper class to allow for sound to play when answers are right/wrong
 
 package Quiz;
 

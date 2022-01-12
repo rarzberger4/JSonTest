@@ -20,7 +20,7 @@ public class Program {
         /*Integer.parseInt(scanner.nextLine().trim()) needed because it also consumes the new line character, nextInt() does not --> nextLine() reads new line character instead of expected new Line
         https://stackoverflow.com/questions/26586489/integer-parseintscanner-nextline-vs-scanner-nextint
          */
-        //Shows Highscore on CLI
+        //Shows High score on CLI
         if (Integer.parseInt(scanner.nextLine().trim()) == 1) {
             h.printHighscore();
             System.out.println("(1) Play new game? (2) Quit game?");
@@ -71,7 +71,7 @@ public class Program {
         myGame.printVictory();
     }
 
-    //Valid input: 8-> quit, 1-3 -> chooses answer, 5-7 -> use Jocker
+    //Valid input: 8-> quit, 1-3 -> chooses answer, 5-7 -> use Joker
     public static int checkInput(Highscore h, Game myGame, Scanner scanner) throws IOException {
         while (!scanner.hasNext("[12345678]")) {
             System.out.println("Choose a valid answer");
