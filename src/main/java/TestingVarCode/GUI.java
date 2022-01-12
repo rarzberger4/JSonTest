@@ -1,64 +1,76 @@
 package TestingVarCode;
 
+/* https://www.youtube.com/watch?v=OI-TFbHQhtA&list=PLWfJeLqH0KUUicazPYhTdnZydkC10h6wB&index=8
+ How to code a GUI in Java by choobtorials 12/01/2022
+ */
+
+import Quiz.Program;
+import Quiz.Highscore;
+
+import java.io.IOException;
+import java.util.Scanner;
 import javax.swing.*;
-import java.awt.*;
+import java.awt.FlowLayout;
+import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-//https://introcs.cs.princeton.edu/java/15inout/GUI.java.html (09.01.2022)
+public class GUI {
 
-    public class GUI implements ActionListener {
+    private JFrame frame;
+    private JLabel label;
+    private JButton button1, button2;
+    private int width;
+    private int height;
 
-        private JFrame frame;
-        private JPanel panel;
-        private JLabel label, label1, label2;
-        private JTextField input;
-
-        public GUI(){
-
-            frame = new JFrame();
-            panel = new JPanel();
-
-            JButton button = new JButton("Antwort 1");
-            button.addActionListener(this);
-            JButton button1 = new JButton("Antwort 2");
-            JButton button2 = new JButton("Antwort 3");
-            JButton button3 = new JButton("Antwort 4");
-            JButton button4 = new JButton("View Highscore");
-
-            input = new JTextField(10);
-
-            label = new JLabel("QUIZMAKER BERMUDA");
-            label1 = new JLabel(" Die Frage lautet: Hier eine Beispielfrage");
-            label2 = new JLabel("Dein Name:");
-
-            panel.setBorder(BorderFactory.createEmptyBorder(60,60,20,60));
-            panel.setLayout(new GridLayout(0,1));
-            panel.add(label);
-            panel.add(label2);
-            panel.add(input);
-            panel.add(label1);
-            panel.add(button);
-            panel.add(button1);
-            panel.add(button2);
-            panel.add(button3);
-            panel.add(button4);
-
-
-
-            frame.add(panel, BorderLayout.CENTER);
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setTitle("Our GUI");
-            frame.pack();
-            frame.setVisible(true);
-        }
-
-        public static void main(String[] args){
-            new GUI();
-        }
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-
-        }
+    public GUI(int w, int h) {
+        frame = new JFrame();
+        label = new JLabel("The Quizmaker by Team Bermuda");
+        button1 = new JButton("Play Game");
+        button2 = new JButton("Show Highscore");
+        width = w;
+        height = h;
     }
+
+    public void setUpGUI() {
+        Container cp = frame.getContentPane();
+        FlowLayout flow = new FlowLayout();
+        cp.setLayout(flow);
+        frame.setSize(width, height);
+        frame.setTitle("Quizmaker - Bermuda");
+
+        cp.add(label);
+        cp.add(button1);
+        cp.add(button2);
+
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+    }
+
+    public void setUpButtonListeners() {
+        ActionListener buttonListener1 = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+               /*
+               Program pg = new Program();
+               pg.checkInput();
+               pg.checkAnswer();
+                */
+
+                System.out.println("Game is running");
+
+            }
+        };
+
+        ActionListener buttonListener2 = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+
+                Highscore hs = new Highscore();
+                hs.printHighscore();
+            }
+        };
+        button1.addActionListener(buttonListener1);
+        button2.addActionListener(buttonListener2);
+    }
+}
