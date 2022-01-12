@@ -1,3 +1,5 @@
+//Helperclass to read from the json and added security (User does not know how Question really looks like
+
 package Quiz;
 
 public class Questiont {

@@ -1,3 +1,5 @@
+//manages the game the user plays
+
 package Quiz;
 
 import java.util.ArrayList;
@@ -5,6 +7,7 @@ import java.util.List;
 
 public class Game {
 
+    //Classvaraibles
     private final Questionnaire questionnaire;
     private final int maxQuestions;
     private int questionNumber;
@@ -15,6 +18,7 @@ public class Game {
     private final Joker hint = new Joker("Hint");
     private final Joker skip = new Joker("Skip question");
 
+    //Constructor
     public Game(Questionnaire questionnaire, int maxQuestions, String playerName) {
         this.questionnaire = questionnaire;
         this.maxQuestions = maxQuestions;
@@ -23,10 +27,12 @@ public class Game {
         this.player = new Player(playerName, 0, "");
     }
 
+    //Methods
     public void addQuestionNumber() {
         this.questionNumber++;
     }
 
+    //Returns question with difficulty appropiate for the progress of the game
     public Question getQuestion() {
         int difficulty = (int) Math.ceil((float)this.questionNumber/(float)this.maxQuestions*3);
         this.question = this.questionnaire.randomQuestion(difficulty);
@@ -77,6 +83,7 @@ public class Game {
         return this.questionNumber == this.maxQuestions;
     }
 
+    //prints Victory message, differnt depending on points
     public void printVictory() {
         int maxPoints = 0;
         if (this.maxQuestions == 9) {

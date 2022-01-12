@@ -1,3 +1,5 @@
+//Helperclass to allows for sound to play when aswers are right/wrong
+
 package Quiz;
 
 import javax.sound.sampled.AudioInputStream;
