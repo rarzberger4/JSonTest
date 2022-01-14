@@ -19,12 +19,12 @@ public class Game {
     private final Joker skip = new Joker("Skip question");
 
     //Constructor
-    public Game(Questionnaire questionnaire, int maxQuestions, String playerName) {
-        this.questionnaire = questionnaire;
+    public Game(String playerName, int maxQuestions) {
+        this.questionnaire = new Questionnaire();
+        this.player = new Player(playerName, 0, "");
         this.maxQuestions = maxQuestions;
         this.questionNumber = 0;
         this.points = 0;
-        this.player = new Player(playerName, 0, "");
     }
 
     //Methods
