@@ -49,21 +49,19 @@ public class Program {
             myGame.printQuestionNumber();
             myGame.printQuestion();
             int selectedAnswer = checkInput(h, myGame, scanner);
-            if (selectedAnswer < 5) {
-                checkAnswer(s, selectedAnswer, myGame);
-            } else if (selectedAnswer == 5) {
-                myGame.useFiftyFifty();
-                selectedAnswer = checkInput(h, myGame, scanner);
-                checkAnswer(s, selectedAnswer, myGame);
-            } else if (selectedAnswer == 6) {
-                myGame.useHint();
-                selectedAnswer = checkInput(h, myGame, scanner);
-                checkAnswer(s, selectedAnswer, myGame);
-            } else if (selectedAnswer == 7){
-                myGame.useSkip();
-                selectedAnswer = checkInput(h, myGame, scanner);
-                checkAnswer(s, selectedAnswer, myGame);
+            while (selectedAnswer > 4) {
+                if (selectedAnswer == 5) {
+                    myGame.useFiftyFifty();
+                    selectedAnswer = checkInput(h, myGame, scanner);
+                } else if (selectedAnswer == 6) {
+                    myGame.useHint();
+                    selectedAnswer = checkInput(h, myGame, scanner);
+                } else if (selectedAnswer == 7){
+                    myGame.useSkip();
+                    selectedAnswer = checkInput(h, myGame, scanner);
+                }
             }
+            checkAnswer(s, selectedAnswer, myGame);
         }
         h.updateHighscore(myGame.getPlayerName(), myGame.getPoints());
         myGame.printVictory();
