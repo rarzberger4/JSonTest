@@ -42,26 +42,47 @@ public class Program {
         int rounds = Integer.parseInt(scanner.nextLine().trim());
         Game myGame = new Game(playerName,(rounds + 2) * 3);
         Sounds s = new Sounds();
+
         //Game starts here
+        int joker1 = 0;
+        int joker2 = 0;
+        int joker3 = 0;
         while (!myGame.End()) {
             myGame.addQuestionNumber();
             myGame.getQuestion();
             myGame.printQuestionNumber();
             myGame.printQuestion();
-            int selectedAnswer = checkInput(h, myGame, scanner);
+            int selectedAnswer = checkInput(h, myGame, scanner, 0);
+
+            while (joker1 == 1 && selectedAnswer == 5) {
+                myGame.useFiftyFifty();
+                selectedAnswer = checkInput(h, myGame, scanner, 0);
+            }
+            while (joker2 == 1 && selectedAnswer == 6) {
+                myGame.useHint();
+                selectedAnswer = checkInput(h, myGame, scanner, 0);
+            }
+            while (joker3 == 1 && selectedAnswer == 7) {
+                myGame.useSkip();
+                selectedAnswer = checkInput(h, myGame, scanner, 0);
+            }
+
             if (selectedAnswer < 5) {
                 checkAnswer(s, selectedAnswer, myGame);
             } else if (selectedAnswer == 5) {
+                joker1 = 1;
                 myGame.useFiftyFifty();
-                selectedAnswer = checkInput(h, myGame, scanner);
+                selectedAnswer = checkInput(h, myGame, scanner, 1);
                 checkAnswer(s, selectedAnswer, myGame);
             } else if (selectedAnswer == 6) {
+                joker2 = 1;
                 myGame.useHint();
-                selectedAnswer = checkInput(h, myGame, scanner);
+                selectedAnswer = checkInput(h, myGame, scanner, 1);
                 checkAnswer(s, selectedAnswer, myGame);
             } else if (selectedAnswer == 7){
+                joker3 = 1;
                 myGame.useSkip();
-                selectedAnswer = checkInput(h, myGame, scanner);
+                selectedAnswer = checkInput(h, myGame, scanner, 1);
                 checkAnswer(s, selectedAnswer, myGame);
             }
         }
@@ -70,11 +91,22 @@ public class Program {
     }
 
     //Valid input: 8 -> quit, 1-4 -> chooses answer, 5-7 -> use Joker
-    public static int checkInput(Highscore h, Game myGame, Scanner scanner) throws IOException {
-        while (!scanner.hasNext("[12345678]")) {
-            System.out.println("Choose a valid answer");
-            scanner.nextLine();
+    public static int checkInput(Highscore h, Game myGame, Scanner scanner, int jokerUsed) throws IOException {
+
+        if (jokerUsed == 1) {
+            while (!scanner.hasNext("[12348]")) {
+                System.out.println("Choose a valid answer. You already used a joker on this question.");
+                scanner.nextLine();
+            }
         }
+        else {
+            while (!scanner.hasNext("[12345678]")) {
+                System.out.println("Choose a valid answer.");
+                scanner.nextLine();
+            }
+        }
+
+
         int selectedAnswer = Integer.parseInt(scanner.nextLine().trim());
         if (selectedAnswer == 8) {
             System.out.println("Are you sure you want to give up? Your final score would be " + myGame.getPoints() + ". \n(1) Yes\n(2) No");
