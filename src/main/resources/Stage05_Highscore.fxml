@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="640.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="Quiz.Stage05Controller">
+    <AnchorPane VBox.vgrow="ALWAYS">
+        <Label alignment="CENTER" layoutX="150.0" layoutY="75.0" prefWidth="100.0" text="Highscore">
+            <font>
+              <Font size="14.0"/>
+            </font>
+        </Label>
+        <TableView fx:id="highscoreTableView" layoutX="50.0" layoutY="125.0" prefHeight="400.0" prefWidth="300.0">
+          <columns>
+              <TableColumn fx:id="playerNameTableViewColumn" maxWidth="100.0" minWidth="100.0" prefWidth="100.0"
+                           resizable="false" text="Player"/>
+              <TableColumn fx:id="scoreTableViewColumn" maxWidth="75.0" minWidth="75.0" prefWidth="75.0"
+                           resizable="false" text="Score"/>
+              <TableColumn fx:id="timeStampTableViewColumn" maxWidth="123.0" minWidth="123.0" prefWidth="123.0"
+                           resizable="false" text="Date"/>
+          </columns>
+        </TableView>
+        <Button fx:id="playGameButton" alignment="CENTER" layoutX="50.0" layoutY="560.0" mnemonicParsing="false"
+                onAction="#onPlayGameButtonClick" prefHeight="50.0" prefWidth="125.0" text="Play Game">
+            <font>
+              <Font size="14.0"/>
+            </font>
+        </Button>
+        <Button fx:id="quitGameButton" alignment="CENTER" layoutX="225.0" layoutY="560.0" mnemonicParsing="false"
+                onAction="#onQuitGameButtonClick" prefHeight="50.0" prefWidth="125.0" text="Quit">
+            <font>
+              <Font size="14.0"/>
+            </font>
+        </Button>
+    </AnchorPane>
+</VBox>

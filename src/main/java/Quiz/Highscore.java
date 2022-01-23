@@ -2,7 +2,10 @@
 
 package Quiz;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.sql.Timestamp;
@@ -32,18 +35,13 @@ public class Highscore {
         }
     }
 
-    //Methods
-    public void printHighscore() {
-        highscore.sort((p1, p2) -> p2.getScore() - p1.getScore());
-        System.out.println("Player\tScore\tTime");
-        for (Player player : highscore) {
-            System.out.println(player.getPlayerName()+"\t"+player.getScore()+"\t\t"+player.getTimeStamp());
-        }
+    public List<Player> getHighscore() {
+        return highscore;
     }
 
-    //writes current known Highscores to Highscore.csv
+    //writes current Highscore to Highscore.csv
     public void updateHighscore(String playerName, int score) throws IOException {
-        String time = new SimpleDateFormat("yyyy-MM-dd_HH:mm").format(new Timestamp(System.currentTimeMillis()));
+        String time = new SimpleDateFormat("yyyy-MM-dd HH:mm").format(new Timestamp(System.currentTimeMillis()));
         Player p = new Player(playerName, score, time);
         highscore.add(p);
         highscore.sort((p1, p2) -> p2.getScore() - p1.getScore());

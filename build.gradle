@@ -1,9 +1,13 @@
 plugins {
     id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.10'
 }
 
 group 'org.example'
 version '1.0-SNAPSHOT'
+
+mainClassName = 'Quiz.App'
 
 repositories {
     mavenCentral()
@@ -12,11 +16,15 @@ repositories {
 dependencies {
     implementation 'com.googlecode.json-simple:json-simple:1.1.1'
     implementation 'com.google.code.gson:gson:2.8.9'
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+}
+
+javafx {
+    version = '17.0.1'
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
 }
 
 test {
     useJUnitPlatform()
 }
-

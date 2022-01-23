@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="640.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="Quiz.Stage01Controller">
+    <AnchorPane VBox.vgrow="ALWAYS">
+        <Button fx:id="playGameButton" alignment="CENTER" layoutX="100.0" layoutY="175.0" mnemonicParsing="false"
+                onAction="#onPlayGameButtonClick" prefHeight="50.0" prefWidth="200.0" text="Play Game"
+                textAlignment="CENTER">
+            <font>
+              <Font size="14.0"/>
+            </font>
+        </Button>
+        <Button fx:id="showHighscoreButton" alignment="CENTER" layoutX="100.0" layoutY="250.0" mnemonicParsing="false"
+                onAction="#onShowHighscoreBClick" prefHeight="50.0" prefWidth="200.0" text="Show Highscore"
+                textAlignment="CENTER">
+            <font>
+              <Font size="14.0"/>
+            </font>
+        </Button>
+        <Button fx:id="quitGameButton" alignment="CENTER" layoutX="100.0" layoutY="325.0" mnemonicParsing="false"
+                onAction="#onQuitGameButtonClick" prefHeight="50.0" prefWidth="200.0" text="Quit Game"
+                textAlignment="CENTER">
+            <font>
+              <Font size="14.0"/>
+            </font>
+        </Button>
+    </AnchorPane>
+</VBox>
