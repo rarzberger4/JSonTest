@@ -47,6 +47,7 @@ public class Stage03Controller implements Initializable {
     private final Sounds s = new Sounds();
     private final Highscore h = new Highscore();
 
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
     }
@@ -75,16 +76,16 @@ public class Stage03Controller implements Initializable {
 
     public void onFiftyFiftyButtonClick() {
         Boolean[] ans = new Boolean[] {false, false, false, false};
-        ArrayList<Integer> answers = new ArrayList<>(List.of(0, 1, 2, 3));
+        List<Integer> answers = new ArrayList<>(List.of(0, 1, 2, 3));
         answers.remove(myGame.getRightAnswerInt());  //remove index of right answer --> indices of 3 wrong answers remain
         answers.remove((int) (Math.random() * 3));        //remove random index of 1 of 3 remaining wrong answer --> indices of 2 wrong answers remain
         for (int i: answers) {
             ans[i] = true;      // set Disable of 2 remaining wrong answers to true
         }
-        answer0Button.setDisable(ans[0]);
-        answer1Button.setDisable(ans[1]);
-        answer2Button.setDisable(ans[2]);
-        answer3Button.setDisable(ans[3]);
+        Button[] answerButtons = new Button[] {answer0Button, answer1Button, answer2Button, answer3Button};
+        for (int i = 0; i < answerButtons.length; i++) {
+            answerButtons[i].setDisable(ans[i]);
+        }
         fiftyFiftyButton.setDisable(true);
     }
 
@@ -131,15 +132,12 @@ public class Stage03Controller implements Initializable {
         myGame.drawNewQuestion();
         currentScoreLabel.setText("Current score: " + myGame.getPoints());
         questionLabel.setText(myGame.getQuestionAsString());
-        answer0Button.setText(myGame.getAnswer(0));
-        answer1Button.setText(myGame.getAnswer(1));
-        answer2Button.setText(myGame.getAnswer(2));
-        answer3Button.setText(myGame.getAnswer(3));
         questionNumberLabel.setText("Question number " + myGame.getQuestionNumber() + " of " + myGame.getMaxQuestions());
-        answer0Button.setDisable(false);
-        answer1Button.setDisable(false);
-        answer2Button.setDisable(false);
-        answer3Button.setDisable(false);
+        Button[] answerButtons = new Button[] {answer0Button, answer1Button, answer2Button, answer3Button};
+        for (int i = 0; i < answerButtons.length; i++) {
+            answerButtons[i].setDisable(false);
+            answerButtons[i].setText(myGame.getAnswer(i));
+        }
         questionLabel.requestFocus();
     }
 
