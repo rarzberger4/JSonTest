@@ -7,7 +7,7 @@
     "answer4": "Pizza Inseln",
     "difficulty": 2,
     "answer": 2,
-    "hint": "zweiteiliges Brötchen"
+    "hint": "zweiteiliges Broetchen"
   },
   {
     "question": "Um etwas zu \"copy & pasten\" braucht es Strg+C und Strg+...",
@@ -17,7 +17,7 @@
     "answer4": "P",
     "difficulty": 1,
     "answer": 3,
-    "hint": "test"
+    "hint": "Ist die 22 Buchstabe des Alphabets"
   },
   {
     "question": "Was produziert Patek Philippe?",
@@ -27,7 +27,7 @@
     "answer4": "Uhren",
     "difficulty": 1,
     "answer": 4,
-    "hint": "test"
+    "hint": "Diese Firma gilt als Empfinder der Aufzugskrone"
   },
   {
     "question": "Welcher F1 Fahrer hat die meisten Rennen gewonnen?",
@@ -37,17 +37,17 @@
     "answer4": "Nikki Lauda",
     "difficulty": 2,
     "answer": 1,
-    "hint": "test"
+    "hint": "Juengster Weltmeister"
   },
   {
-    "question": "Wie heißt eine Gruppe von Einhörnern",
+    "question": "Wie heißt eine Gruppe von Einhoernern",
     "answer1": "Segen",
     "answer2": "Wunsch",
     "answer3": "Traum",
     "answer4": "Schutz",
     "difficulty": 3,
     "answer": 1,
-    "hint": "test"
+    "hint": "Wort wird oft in religioesen Umstaenden verwendet"
   },
   {
     "question": "Was war der Orginaltitel von Pride & Prejudice von Jane Austen?",
@@ -57,7 +57,7 @@
     "answer4": "First Impression",
     "difficulty": 3,
     "answer": 4,
-    "hint": "test"
+    "hint": "Was zaehlt als erstes, wenn man eine neue Person kennenlernt?"
   },
   {
     "question": "Welches Land grenzt an die Slowakei, die Tschechische Republik, die Ukraine und Deutschland?",
@@ -67,7 +67,7 @@
     "answer4": "Slovenien",
     "difficulty": 1,
     "answer": 2,
-    "hint": "test"
+    "hint": "Hauptstadt ist Warschau"
   },
   {
     "question": "Stefani Joanne Angelina Germanotta ist der richtige Name welcher berühmten Sängerin?",
@@ -77,17 +77,17 @@
     "answer4": "Adele",
     "difficulty": 2,
     "answer": 2,
-    "hint": "test"
+    "hint": "Teil ihres Namens befindet sich auch im Queens Lied 'Radio ____"
   },
   {
-    "question": "Wie viele Zeichen durfte ein Tweet orginal haben?",
-    "answer1": 200,
-    "answer2": 180,
-    "answer3": 140,
-    "answer4": 100,
+    "question": "Wer war Franz Kafka?",
+    "answer1": "Schauspieler",
+    "answer2": "Politiker",
+    "answer3": "Schriftsteller",
+    "answer4": "Musiker",
     "difficulty": 1,
     "answer": 3,
-    "hint": "test"
+    "hint": "Wurde post-mortem beruehmt"
   },
   {
     "question": "Das erste Farbfoto wurde in welchem Jahr aufgenommen?",
@@ -97,7 +97,7 @@
     "answer4": 1950,
     "difficulty": 3,
     "answer": 2,
-    "hint": "test"
+    "hint": "Zahl ist teilbar durch 5"
   },
   {
     "question": "Was ist die Hauptstadt von Argentinien?",
@@ -107,7 +107,7 @@
     "answer4": "Lissabon",
     "difficulty": 1,
     "answer": 1,
-    "hint": "test"
+    "hint": "Gute Lüfte"
   },
   {
     "question": "Was war die aller erste Programmiersprache?",
@@ -117,47 +117,47 @@
     "answer4": "Fortran",
     "difficulty": 1,
     "answer": 4,
-    "hint": "test"
+    "hint": "Ist auch der name eines Vitamins"
   },
   {
-    "question": "Warum ist der Himmel blau?",
-    "answer1": "Lichtablenkung",
-    "answer2": "Lichtbrechung",
-    "answer3": "Reflexion vom Meer",
-    "answer4": "Partikel in der Atmosphäre",
+    "question": "Welches Land gewann die Fussball-Meisterschaft in 1998 gewonnen",
+    "answer1": "Russland",
+    "answer2": "Frankreich",
+    "answer3": "Deutschland",
+    "answer4": "Spanien",
     "difficulty": 2,
     "answer": 2,
-    "hint": "test"
+    "hint": "Macron ist der Praesident dieses Landes"
   },
   {
-    "question": "Wie viele Exoplaneten wurden bisher (18.08.2021) entdeckt?",
-    "answer1": 10407,
-    "answer2": 5614,
-    "answer3": 4839,
-    "answer4": 896,
+    "question": "Welcher Land gehoert nicht zum ehemaligen UDSSR?",
+    "answer1": "Kazakhstan",
+    "answer2": "Uznekistan",
+    "answer3": "Moldawien",
+    "answer4": "Rumaenien",
     "difficulty": 3,
-    "answer": 3,
-    "hint": "test"
+    "answer": 4,
+    "hint": "Die Staat befindet sich in Europa, doch gehoert zu der EU nicht."
   },
   {
-    "question": "Wie heißt der neueste Disney Film (05.12.2021)?",
-    "answer1": "Red",
-    "answer2": "Coco",
-    "answer3": "Encanto",
-    "answer4": "Luca",
+    "question": "Welcher Film hat am meisten Geld eingebracht?",
+    "answer1": "Titanic",
+    "answer2": "Avengers:Endgame",
+    "answer3": "Avatar",
+    "answer4": "Toy Story",
     "difficulty": 2,
     "answer": 3,
-    "hint": "test"
+    "hint": "Regiseur: James Cameron"
   },
   {
-    "question": "Wieviele Knochen hat der ausgewachsene Mensch?",
-    "answer1": "206 - 214",
-    "answer2": "300",
-    "answer3": "140 - 145",
-    "answer4": "283 - 286",
+    "question": "Welcher Staat gehoert nicht zum NATO?",
+    "answer1": "Serbien",
+    "answer2": "Griechenland",
+    "answer3": "Kanada",
+    "answer4": "Bulgarien",
     "difficulty": 3,
     "answer": 1,
-    "hint": "test"
+    "hint": "Gehoerte einmal zum Jugoslawien"
   },
   {
     "question": "Wie heißt das Team, das dieses Quiz entwickelt hat?",
@@ -177,27 +177,27 @@
     "answer4": 800,
     "difficulty": 2,
     "answer": 1,
-    "hint": "test"
+    "hint": "Zahl entspricht einem Millenium"
   },
   {
-    "question": "Wie heißt der Übungsleiter von Programmieren Gruppe 1 (2021W)?",
-    "answer1": "Felix",
-    "answer2": "Leon",
-    "answer3": "Tom",
-    "answer4": "Lorenz",
+    "question": "Wer hat A Tale of Two Cities geschrieben?",
+    "answer1": "Earnest Hemingway",
+    "answer2": "Charles Dickens",
+    "answer3": "George Elliot",
+    "answer4": "Oscar Wilde",
     "difficulty": 1,
     "answer": 2,
-    "hint": "test"
+    "hint": "Der Author hat auch Oliver Twist"
   },
   {
-    "question": "Wie lautet die Corona Hotline in Österreich?",
-    "answer1": "1054",
-    "answer2": "4015",
-    "answer3": "1540",
-    "answer4": "1450",
+    "question": "Die Firma Hennes und Mauritz auch H&M genannt ist ein Textilhandelsunternehmen aus:",
+    "answer1": "Deutschland",
+    "answer2": "Daenemark",
+    "answer3": "Finland",
+    "answer4": "Schweden",
     "difficulty": 1,
     "answer": 4,
-    "hint": "test"
+    "hint": "Dieses Land begrenzt Norwegien"
   },
   {
     "question": "Wie heißt die Hauptstadt von Bangladesch?",
@@ -207,47 +207,47 @@
     "answer4": "Phnom Penh",
     "difficulty": 2,
     "answer": 1,
-    "hint": "test"
+    "hint": "Stadt ist Teil muslimisch, Teil hinduistisch"
   },
   {
     "question": "Welches dieser Tiere hält keinen Winterschlaf?",
     "answer1": "Igel",
-    "answer2": "Siebenschläfer",
-    "answer3": "Eichhörnchen",
+    "answer2": "Siebenschlaefer",
+    "answer3": "Eichhoernchen",
     "answer4": "Fledermaus",
     "difficulty": 2,
     "answer": 3,
-    "hint": "test"
+    "hint": "Dieses Tier isst oft Nuessse"
   },
   {
-    "question": "Wie heißt ist die größte Insel der Welt?",
+    "question": "Wie heißt ist die groesste Insel der Welt?",
     "answer1": "Borneo",
     "answer2": "Sumatra",
     "answer3": "Neuguinea",
     "answer4": "Grönland",
     "difficulty": 3,
     "answer": 4,
-    "hint": "test"
+    "hint": "Dieses Insel gehort zum Daenemark"
   },
   {
-    "question": "Welcher Plant steht der Erde am nächsten?",
+    "question": "Welcher Plant steht der Erde am naechsten?",
     "answer1": "Venus",
     "answer2": "Mars",
     "answer3": "Merkur",
     "answer4": "Pluto",
     "difficulty": 2,
     "answer": 1,
-    "hint": "test"
+    "hint": "Aequivalent der Aphrodite"
   },
   {
-    "question": "Wie heißt der tiefste Süßwassersee der Erde?",
+    "question": "Wie heißt der tiefste Suesswassersee der Erde?",
     "answer1": "Victoriasee",
     "answer2": "Kaspisches Meer",
     "answer3": "Oberer See",
     "answer4": "Baikalsee",
     "difficulty": 1,
     "answer": 4,
-    "hint": "test"
+    "hint": "Befindet sich im Russland"
   },
   {
     "question": "Was wird durch Antibiotika bekämpft?",
@@ -257,7 +257,7 @@
     "answer4": "Protozoen",
     "difficulty": 3,
     "answer": 1,
-    "hint": "test"
+    "hint": "Aelteste Lebewesen der Erde"
   },
   {
     "question": "Wo wurde Napoleon Bonaparte geboren?",
@@ -267,17 +267,17 @@
     "answer4": "Ajaccio",
     "difficulty": 3,
     "answer": 4,
-    "hint": "test"
+    "hint": "Die Stadt befindet sich auf einer Insel"
   },
   {
     "question": "Piraten trugen einen Augenklappe ...",
-    "answer1": "um in der Dunkelheit besser sehen zu können.",
+    "answer1": "um in der Dunkelheit besser sehen zu koennen.",
     "answer2": "um ihre Wunden zu bedecken.",
-    "answer3": "um sich vor der Sonne zu schützen.",
+    "answer3": "um sich vor der Sonne zu schuetzen.",
     "answer4": "aus Modezwecken.",
     "difficulty": 1,
     "answer": 1,
-    "hint": "test"
+    "hint": "Warum traegt ein Mensch Sonnenbrillen?"
   },
   {
     "question": "Was war das erste gedruckte Buch?",
@@ -287,7 +287,7 @@
     "answer4": "Book of Kells",
     "difficulty": 2,
     "answer": 2,
-    "hint": "test"
+    "hint": "Wichtigste Buch der buddhistischen Religion"
   },
   {
     "question": "Wer ist der reichste Maler der Welt?",
@@ -297,7 +297,7 @@
     "answer4": "Damien Hirst",
     "difficulty": 2,
     "answer": 4,
-    "hint": "test"
+    "hint": "Zu den Werken britischer Künstler gehören Ausstellungen toter Tiere und Spin-Art-Gemälde."
   },
   {
     "question": "Was ist das chemische Symbol für Silber?",
@@ -307,7 +307,7 @@
     "answer4": "Si",
     "difficulty": 2,
     "answer": 2,
-    "hint": "test"
+    "hint": "Der lange Name ist Argentum (alias Silber auf Latein)"
   },
   {
     "question": "Was ist der kleinste Vogel der Welt?",
@@ -317,7 +317,7 @@
     "answer4": "Elfen-Kolibri",
     "difficulty": 3,
     "answer": 1,
-    "hint": "test"
+    "hint": "Die Art kommt auf Kuba vor."
   },
   {
     "question": "Wer hat 1810 die Blechdose zur Konservierung von Lebensmitteln erfunden?",
@@ -327,7 +327,7 @@
     "answer4": "Ernst Sachs",
     "difficulty": 2,
     "answer": 2,
-    "hint": "test"
+    "hint": "War ein englischer Kaufmann, dem weithin zugeschrieben wird, dass er das erste Patent für die Idee erhalten hat, Lebensmittel mit Blechdosen haltbar zu machen."
   },
   {
     "question": "Wie viele Herzen hat ein Oktopus?",
@@ -337,7 +337,7 @@
     "answer4": "Vier",
     "difficulty": 3,
     "answer": 3,
-    "hint": "test"
+    "hint": "Die zweite Primzahl."
   },
   {
     "question": "Wie viel Wasser gibt es auf der Erde pro Mensch?",
@@ -347,17 +347,17 @@
     "answer4": "150 Mio Liter",
     "difficulty": 3,
     "answer": 1,
-    "hint": "test"
+    "hint": "In diesem Jahr wird die Terrakotta-Armee zusammen mit Kaiser Qin in China beerdigt."
   },
   {
     "question": "Was ist die durchschnittliche Oberflächentemperatur auf der Venus?",
-    "answer1": "510°C",
-    "answer2": "210°C",
+    "answer1": "1130°C",
+    "answer2": "83°C",
     "answer3": "460°C",
-    "answer4": "830°C",
+    "answer4": "115°C",
     "difficulty": 3,
     "answer": 3,
-    "hint": "test"
+    "hint": "Venus ist der heißeste Planet in unserem Sonnensystem."
   },
   {
     "question": "Welche Nationalität hatte der Künstler Henri Matisse?",
@@ -367,7 +367,7 @@
     "answer4": "Französisch",
     "difficulty": 1,
     "answer": 4,
-    "hint": "test"
+    "hint": "Henri Matisse erfand die Collage als technische Kunst."
   },
   {
     "question": "In welchem Land steht die Tempelanlage von Angkor Wat?",
@@ -377,7 +377,7 @@
     "answer4": "Sri Lanka",
     "difficulty": 3,
     "answer": 3,
-    "hint": "test"
+    "hint": "Angkor Wat ist auf der Nationalflagge abgebildet."
   },
   {
     "question": "In welchem Land kann man das Taj Mahal besichtigen?",
@@ -387,7 +387,7 @@
     "answer4": "Sri Lanka",
     "difficulty": 1,
     "answer": 1,
-    "hint": "test"
+    "hint": "Hierzulande gelten die Kühe als heilig."
   },
   {
     "question": "Welche Stadt bietet den Ort für die fiktive Kings Landing?",
@@ -397,7 +397,7 @@
     "answer4": "Lissabon",
     "difficulty": 2,
     "answer": 3,
-    "hint": "test"
+    "hint": "War das erste Land, das 1416 die Sklaverei verbannte."
   },
   {
     "question": "Wie ist Cersis Kind Myrcella gestorben?",
@@ -407,7 +407,7 @@
     "answer4": "Erwürgt",
     "difficulty": 2,
     "answer": 2,
-    "hint": "test"
+    "hint": "Ein Versuch, Dorne als Rache gegen Cersei Lannister für ihre Rolle beim Tod von Oberyn Martell in einen Konflikt mit dem Haus Baratheon zu ziehen."
   },
   {
     "question": "Wie heißt Jon Snow's Direwolf?",
@@ -417,7 +417,7 @@
     "answer4": "Ghost",
     "difficulty": 1,
     "answer": 4,
-    "hint": "test"
+    "hint": "Ein Albino-Direwolf, der sich mit Jon Snow verbunden hat."
   },
   {
     "question": "Welcher Bond-Film wurde 2006 veröffentlicht?",
@@ -427,17 +427,17 @@
     "answer4": "Quantum of Solace",
     "difficulty": 1,
     "answer": 3,
-    "hint": "test"
+    "hint": "Es ist Daniel Craigs erster Bond-Film."
   },
   {
-    "question": "Können Sie die sechs Verdächtigen im Brettspiel Cluedo nennen?",
-    "answer1": "Miss Saphire, Colonel Mustard, Mrs. White, Reverend Blue, Mrs. Peacock und Professor Peach",
+    "question": "Koennen Sie die sechs Verdaechtigen im Brettspiel Cluedo nennen?",
+    "answer1": "Mr. Saphire, Colonel Mustard, Mrs. White, Reverend Blue, Mrs. Peacock und Professor Peach",
     "answer2": "Miss Scarlett, Colonel Ketchup, Mrs. Black, Reverend Green, Mrs. Peacock und Professor Plum",
     "answer3": "Miss Saphire, Colonel Ketchup, Mrs. Black, Reverend Blue, Mrs. Peacock und Professor Peach",
-    "answer4": "Miss Scarlett, Colonel Mustard, Mrs. White, Reverend Green, Mrs. Peacock und Professor Plum",
+    "answer4": "Mr. Scarlett, Colonel Mustard, Mrs. White, Reverend Green, Mrs. Peacock und Professor Plum",
     "difficulty": 3,
     "answer": 4,
-    "hint": "test"
+    "hint": "Es sind 2 Frauen und 4 Männer."
   },
   {
     "question": "In welchem Spiel musst du mit den Flusspferden so viele Murmeln wie möglich sammeln?",
@@ -447,17 +447,17 @@
     "answer4": "Gefräßige, gefräßige Hippos",
     "difficulty": 2,
     "answer": 1,
-    "hint": "test"
+    "hint": "\"It's a race, it's a chase, hurry up and feed their face!\nWho will win? No one knows! Feed the hungry hip-ip-pos!\""
   },
   {
     "question": "Wie hieß die erste Wirtschaftsblase der Geschichte?",
-    "answer1": "Die niederländische Tulpenblase",
+    "answer1": "Die Tulpenblase",
     "answer2": "Die Immobilienblase",
     "answer3": "Die Südseeblase",
-    "answer4": "Japans Immobilien- und Aktienmarktblase",
+    "answer4": "Immobilien- und Aktienmarktblase",
     "difficulty": 3,
     "answer": 1,
-    "hint": "test"
+    "hint": "Dies war ein spekulativer Rausch im Niederland des 17. Jahrhunderts"
   },
   {
     "question": "Wer hat das erste funktionierende Flugzeug erschaffen?",
@@ -467,17 +467,17 @@
     "answer4": "Henri Coanda",
     "difficulty": 2,
     "answer": 2,
-    "hint": "test"
+    "hint": "Die Person(en) hatte/haben kein Abitur"
   },
   {
-    "question": "Wie lange dauerte der Hundertjährige Krieg?",
+    "question": "Wie lange dauerte der Hundertjaehrige Krieg?",
     "answer1": "100 Jahre",
     "answer2": "89 Jahre",
     "answer3": "148 Jahre",
     "answer4": "116 Jahre",
     "difficulty": 3,
     "answer": 4,
-    "hint": "test"
+    "hint": "Der Krieg dauerte ungefaehr 4 Generationen des englischen und französischen Koenigshauses"
   },
   {
     "question": "Wie heißt das größte Technologieunternehmen in Deutschland?",
@@ -487,6 +487,6 @@
     "answer4": "Siemens",
     "difficulty": 3,
     "answer": 1,
-    "hint": "test"
+    "hint": "Die Software verwaltet den Geschäftsbetrieb und die Kundenbeziehungen."
   }
 ]
