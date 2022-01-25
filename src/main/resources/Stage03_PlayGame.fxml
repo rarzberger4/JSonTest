@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="640.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Quiz.Stage03Controller">
+   <AnchorPane VBox.vgrow="ALWAYS">
+      <Label fx:id="currentScoreLabel" alignment="CENTER_RIGHT" layoutX="245.0" layoutY="70.0" prefHeight="17.0" prefWidth="125.0" text="Current Score" />
+      <Label fx:id="questionLabel" alignment="CENTER" layoutX="25.0" layoutY="100.0" prefHeight="160.0" prefWidth="350.0" text="Question" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="answer0Button" alignment="CENTER" layoutX="27.0" layoutY="270.0" mnemonicParsing="false" onAction="#onAnswerButton0Click" prefHeight="90.0" prefWidth="170.0" text="A0" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="answer1Button" alignment="CENTER" layoutX="203.0" layoutY="270.0" mnemonicParsing="false" onAction="#onAnswerButton1Click" prefHeight="90.0" prefWidth="170.0" text="A1" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="answer2Button" alignment="CENTER" layoutX="27.0" layoutY="370.0" mnemonicParsing="false" onAction="#onAnswerButton2Click" prefHeight="90.0" prefWidth="170.0" text="A2" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="answer3Button" alignment="CENTER" layoutX="203.0" layoutY="370.0" mnemonicParsing="false" onAction="#onAnswerButton3Click" prefHeight="90.0" prefWidth="170.0" text="A3" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="fiftyFiftyButton" alignment="CENTER" layoutX="27.0" layoutY="490.0" mnemonicParsing="false" onAction="#onFiftyFiftyButtonClick" prefHeight="30.0" prefWidth="100.0" text="50/50" textAlignment="CENTER" />
+      <Button fx:id="skipQuestionButton" alignment="CENTER" layoutX="150.0" layoutY="490.0" mnemonicParsing="false" onAction="#onSkipQuestionButtonClick" prefHeight="30.0" prefWidth="100.0" text="Skip Question" textAlignment="CENTER" />
+      <Button fx:id="hintButton" alignment="CENTER" layoutX="272.0" layoutY="490.0" mnemonicParsing="false" onAction="#onHintButtonClick" prefHeight="30.0" prefWidth="100.0" text="Hint" textAlignment="CENTER" />
+      <Label fx:id="questionNumberLabel" layoutX="25.0" layoutY="578.0" prefWidth="150.0" text="Question Number" />
+      <ProgressBar fx:id="myProgressBar" layoutX="22.0" layoutY="602.0" prefWidth="200.0" progress="0.0" />
+      <Button fx:id="quitGameButton" alignment="CENTER" layoutX="270.0" layoutY="570.0" mnemonicParsing="false" onAction="#onQuitGameButtonClick" prefHeight="50.0" prefWidth="100.0" text="Quit Game">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </AnchorPane>
+</VBox>

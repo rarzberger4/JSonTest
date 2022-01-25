@@ -1,4 +1,4 @@
-//manages the player information
+//manages player information
 
 package Quiz;
 
@@ -6,13 +6,13 @@ public class Player {
 
     //Class variables
     private final String playerName;
-    private final int Score;
+    private final int score;
     private final String timeStamp;
 
     //Constructor
     public Player(String playerName, int score, String timeStamp) {
         this.playerName = playerName;
-        this.Score = score;
+        this.score = score;
         this.timeStamp = timeStamp;
     }
 
@@ -22,7 +22,7 @@ public class Player {
     }
 
     public int getScore() {
-        return Score;
+        return score;
     }
 
     public String getTimeStamp() {

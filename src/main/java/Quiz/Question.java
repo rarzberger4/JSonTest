@@ -14,10 +14,10 @@ public class Question {
     //Constructors
     public Question (Questiont q){
         this.question = q.getQuestion();
-        this.answers[0] = q.getAnswer1();
-        this.answers[1] = q.getAnswer2();
-        this.answers[2] = q.getAnswer3();
-        this.answers[3] = q.getAnswer4();
+        this.answers[0] = q.getAnswer0();
+        this.answers[1] = q.getAnswer1();
+        this.answers[2] = q.getAnswer2();
+        this.answers[3] = q.getAnswer3();
         this.rightAnswer = q.getAnswer();
         this.difficulty = q.getDifficulty();
         this.hint = q.getHint();

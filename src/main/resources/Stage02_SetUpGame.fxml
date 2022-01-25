@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="640.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Quiz.Stage02Controller">
+   <AnchorPane VBox.vgrow="ALWAYS">
+      <Label alignment="CENTER" layoutX="100.0" layoutY="110.0" prefWidth="200.0" text="Enter your name:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="playerNameTextField" alignment="CENTER" layoutX="125.0" layoutY="160.0" prefWidth="150.0" promptText="name">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label alignment="CENTER" layoutX="50.0" layoutY="260.0" prefWidth="300.0" text="How many questions do you want to play?">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ToggleButton fx:id="nineQuestionsButton" layoutX="45.0" layoutY="310.0" mnemonicParsing="false" onAction="#getMaxQuestions" prefHeight="50.0" prefWidth="90.0" text="9" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="buttonGroup" />
+         </toggleGroup>
+      </ToggleButton>
+      <ToggleButton fx:id="twelveQuestionsButton" layoutX="155.0" layoutY="310.0" mnemonicParsing="false" onAction="#getMaxQuestions" prefHeight="50.0" prefWidth="90.0" text="12" textAlignment="CENTER" toggleGroup="$buttonGroup">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </ToggleButton>
+      <ToggleButton fx:id="fifteenQuestionsButton" layoutX="265.0" layoutY="310.0" mnemonicParsing="false" onAction="#getMaxQuestions" prefHeight="50.0" prefWidth="90.0" text="15" textAlignment="CENTER" toggleGroup="$buttonGroup">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </ToggleButton>
+      <Button fx:id="startGameButton" alignment="CENTER" layoutX="90.0" layoutY="450.0" mnemonicParsing="false" onAction="#onStartGameButtonClick" prefHeight="60.0" prefWidth="220.0" text="Start">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="quitGameButton" alignment="CENTER" layoutX="90.0" layoutY="525.0" mnemonicParsing="false" onAction="#onQuitGameButtonClick" prefHeight="60.0" prefWidth="220.0" text="Quit">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </AnchorPane>
+</VBox>

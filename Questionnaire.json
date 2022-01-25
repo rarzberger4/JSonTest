@@ -430,14 +430,14 @@
     "hint": "Es ist Daniel Craigs erster Bond-Film."
   },
   {
-    "question": "Wie heißt einer der Verdächtigen im Brettspiel Cluedo?",
-    "answer0": "Professor Roth",
-    "answer1": "Professor White",
-    "answer2": "Professor Grün",
-    "answer3": "Professor Bloom",
+    "question": "Können Sie die sechs Verdächtigen im Brettspiel Cluedo nennen?",
+    "answer0": "Mr. Saphire, Colonel Mustard, Mrs. White, Reverend Blue, Mrs. Peacock und Professor Peach",
+    "answer1": "Miss Scarlett, Colonel Ketchup, Mrs. Black, Reverend Green, Mrs. Peacock und Professor Plum",
+    "answer2": "Miss Saphire, Colonel Ketchup, Mrs. Black, Reverend Blue, Mrs. Peacock und Professor Peach",
+    "answer3": "Mr. Scarlett, Colonel Mustard, Mrs. White, Reverend Green, Mrs. Peacock und Professor Plum",
     "difficulty": 3,
     "answer": 3,
-    "hint": "Seine Farbe ist violett"
+    "hint": "Es sind 2 Frauen und 4 Männer."
   },
   {
     "question": "In welchem Spiel musst du mit den Flusspferden so viele Murmeln wie möglich sammeln?",

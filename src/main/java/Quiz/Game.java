@@ -2,9 +2,6 @@
 
 package Quiz;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Game {
 
     //Class variables
@@ -14,9 +11,6 @@ public class Game {
     private int points;
     private final Player player;
     private Question question;
-    private final Joker fifty = new Joker("50/50");
-    private final Joker hint = new Joker("Hint");
-    private final Joker skip = new Joker("Skip question");
 
     //Constructor
     public Game(String playerName, int maxQuestions) {
@@ -28,63 +22,57 @@ public class Game {
     }
 
     //Methods
+    public int getPoints() {
+        return this.points;
+    }
+
+    public String getPlayerName() {
+        return this.player.getPlayerName();
+    }
+
+    public String getQuestionAsString() {
+        return this.question.getQuestion();
+    }
+
+    public String getAnswer(int i) { return this.question.getAnswers()[i]; }
+
+    public String getRightAnswerString() { return this.question.getAnswers()[this.question.getRightAnswer()]; }
+
+    public int getRightAnswerInt() { return this.question.getRightAnswer(); }
+
+    public String getHint() { return this.question.getHint(); }
+
+    public int getQuestionNumber() {
+        return this.questionNumber;
+    }
+
+    public int getMaxQuestions() { return this.maxQuestions; }
+
+    public int getDifficulty() { return (int) Math.ceil((float)this.questionNumber/(float)this.maxQuestions*3); }
+
+    //Returns question with difficulty according to game progress
+    public void drawNewQuestion() {
+        this.question = this.questionnaire.randomQuestion(this.getDifficulty());
+    }
+
     public void addQuestionNumber() {
         this.questionNumber++;
     }
 
-    //Returns question with difficulty appropriate for the progress of the game
-    public Question getQuestion() {
-        int difficulty = (int) Math.ceil((float)this.questionNumber/(float)this.maxQuestions*3);
-        this.question = this.questionnaire.randomQuestion(difficulty);
-        return this.questionnaire.randomQuestion(difficulty);
-    }
-
-    public void printQuestionNumber() {
-        System.out.println("Question number " + this.questionNumber + " of " + this.maxQuestions + ":");
-    }
-
-    public void printQuestion() {
-        String output = this.question.getQuestion() + System.lineSeparator();
-        for(int i = 0; i < this.question.getAnswers().length; i++) {
-            output += "(" + (i+1) + ") " + this.question.getAnswers()[i] + System.lineSeparator();
-        }
-        output += "Jokers: (5) " + this.fifty.getJokerName() + " (6) " + this.hint.getJokerName() + " (7) " + this.skip.getJokerName() + System.lineSeparator();
-        output += "(8) give up and quit the game";
-        System.out.println(output);
-    }
-
-    public boolean checkAnswer(int answer) {
-        return this.question.getRightAnswer() == answer;
-    }
-
-    public void printRightAnswer() {
-        System.out.println(this.question.getAnswers()[this.question.getRightAnswer() - 1]);
-    }
-
     public void addPoints() {
-        int difficulty = (int) Math.ceil((float)this.questionNumber/(float)this.maxQuestions*3);
-        this.points += this.questionNumber * difficulty;
+        this.points += this.questionNumber * this.getDifficulty();
     }
 
     public void deductPoints() {
-        int difficulty = (int) Math.ceil((float)this.questionNumber/(float)this.maxQuestions*3);
-        if (this.points > this.questionNumber * difficulty / 3) {
-            this.points -= this.questionNumber * difficulty / 3;
+        if (this.points > this.questionNumber * this.getDifficulty() / 3) {
+            this.points -= this.questionNumber * this.getDifficulty() / 3;
         } else {
             this.points = 0;
         }
     }
 
-    public void printStatus() {
-        System.out.println("Current points: " + this.points + System.lineSeparator());
-    }
-
-    public boolean End() {
-        return this.questionNumber == this.maxQuestions;
-    }
-
     //prints Victory message, different depending on points
-    public void printVictory() {
+    public String getVictory() {
         int maxPoints = 0;
         if (this.maxQuestions == 9) {
             maxPoints = 108;
@@ -101,56 +89,9 @@ public class Game {
         } else if (this.points < maxPoints) {
             output = "Excellent! You have " + output;
         } else {
-            output =  "Full score! Incredible!";
+            output =  "Full score! Incredible! You have " + output;
         }
-        System.out.println(output);
-    }
-
-    public int getPoints() {
-        return this.points;
-    }
-
-    public String getPlayerName() {
-        return this.player.getPlayerName();
-    }
-
-    public void useFiftyFifty() {
-        if (this.fifty.isAvailable()) {
-            System.out.println("You selected the 50/50 joker.");
-            ArrayList<Integer> a = new ArrayList<>(List.of(0, 1, 2, 3));
-            a.remove(this.question.getRightAnswer()-1);  //remove index of right answer --> indices of 3 wrong answers remain
-            a.remove((int) (Math.random() * 3));        //remove random index of 1 of 3 remaining wrong answer --> indices of 2 wrong answers remain
-            for (int i: a) {
-                this.question.getAnswers()[i] = "";      // set values of 2 remaining wrong answers to ""
-            }
-            this.printQuestion();
-            this.fifty.setAvailable(false);
-        } else {
-            System.out.println("You already used the 50/50 joker.");
-        }
-
-    }
-
-    public void useHint() {
-        if (this.hint.isAvailable()) {
-            System.out.println("You selected the hint joker.");
-            System.out.println("Hint: " + this.question.getHint());
-            System.out.println("(Hint joker not fully implemented...)");
-            this.hint.setAvailable(false);
-        } else {
-            System.out.println("You already used the hint joker.");
-        }
-    }
-
-    public void useSkip() {
-        if (this.skip.isAvailable()) {
-            System.out.println("You selected the skip joker. Here is your new question:");
-            this.skip.setAvailable(false);
-            this.question = this.getQuestion();
-            this.printQuestion();
-        } else {
-            System.out.println("You already used the skip joker.");
-        }
+        return output;
     }
 
 }
