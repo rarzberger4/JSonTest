@@ -13,6 +13,7 @@ import java.io.IOException;
 
 public class Stage02Controller {
 
+    //Class Variables
     @FXML
     private ToggleGroup buttonGroup;
     @FXML
@@ -29,11 +30,13 @@ public class Stage02Controller {
     private String playerName;
     private int maxQuestions;
 
+    // Getting the TextField Input
     @FXML
     public void getPlayerName() {
         playerName = playerNameTextField.getText();
     }
 
+    // Getting what Question-Format was decided on
     public void getMaxQuestions() {
         Toggle selectedToggle = buttonGroup.getSelectedToggle();
         if (selectedToggle == nineQuestionsButton) {
@@ -47,6 +50,7 @@ public class Stage02Controller {
         }
     }
 
+    // Error checks before actually starting the Game
     @FXML
     public void onStartGameButtonClick(ActionEvent actionEvent) throws IOException {
         getPlayerName();

@@ -14,10 +14,11 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class MainStageController {
+public class MainStageController { //Is in control of what the buttons should do
 
     @FXML
     public static void onPlayGameButtonClick(ActionEvent actionEvent) throws IOException {
+        //After an IO operation on Play Game Stage02 appears
         FXMLLoader loader = new FXMLLoader(MainStageController.class.getResource("/Stage02_SetUpGame.fxml"));
         Parent root = loader.load();
         Stage stage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
@@ -28,6 +29,7 @@ public class MainStageController {
 
     @FXML
     public static void onShowHighscoreBClick(ActionEvent actionEvent) throws IOException {
+        //After an IO operation on Show Highscore Stage05 appears
         FXMLLoader loader = new FXMLLoader(MainStageController.class.getResource("/Stage05_Highscore.fxml"));
         Parent root = loader.load();
         Stage stage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
@@ -38,6 +40,7 @@ public class MainStageController {
 
     @FXML
     public static void onQuitGameButtonClick(Button quitButton) {
+        //The Button Quit Game exists to close the Game
         ButtonType yes = new ButtonType("Yes", ButtonBar.ButtonData.YES);
         ButtonType no = new ButtonType("No", ButtonBar.ButtonData.NO);
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION,"Do you really want to quit?");
