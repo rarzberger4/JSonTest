@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class Stage03Controller implements Initializable {
+public class Stage03Controller {
 
     @FXML
     private Label questionNumberLabel;
@@ -47,15 +47,23 @@ public class Stage03Controller implements Initializable {
     private final Sounds s = new Sounds();
     private final Highscore h = new Highscore();
 
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-    }
-
     public void startScene(Game game) {
         myGame = game;
         myGame.addQuestionNumber();
         drawNewQuestion();
+    }
+
+    public void drawNewQuestion() {
+        myGame.drawNewQuestion();
+        currentScoreLabel.setText("Current score: " + myGame.getPoints());
+        questionLabel.setText(myGame.getQuestionAsString());
+        questionNumberLabel.setText("Question number " + myGame.getQuestionNumber() + " of " + myGame.getMaxQuestions());
+        Button[] answerButtons = new Button[] {answer0Button, answer1Button, answer2Button, answer3Button};
+        for (int i = 0; i < answerButtons.length; i++) {
+            answerButtons[i].setDisable(false);
+            answerButtons[i].setText(myGame.getAnswer(i));
+        }
+        questionLabel.requestFocus();
     }
 
     public void onAnswerButton0Click(ActionEvent actionEvent) throws IOException {
@@ -74,32 +82,7 @@ public class Stage03Controller implements Initializable {
         onAnswerButtonClick(actionEvent, 3);
     }
 
-    public void onFiftyFiftyButtonClick() {
-        Boolean[] ans = new Boolean[] {false, false, false, false};
-        List<Integer> answers = new ArrayList<>(List.of(0, 1, 2, 3));
-        answers.remove(myGame.getRightAnswerInt());  //remove index of right answer --> indices of 3 wrong answers remain
-        answers.remove((int) (Math.random() * 3));        //remove random index of 1 of 3 remaining wrong answer --> indices of 2 wrong answers remain
-        for (int i: answers) {
-            ans[i] = true;      // set Disable of 2 remaining wrong answers to true
-        }
-        Button[] answerButtons = new Button[] {answer0Button, answer1Button, answer2Button, answer3Button};
-        for (int i = 0; i < answerButtons.length; i++) {
-            answerButtons[i].setDisable(ans[i]);
-        }
-        fiftyFiftyButton.setDisable(true);
-    }
-
-    public void onSkipQuestionButtonClick() {
-        drawNewQuestion();
-        skipQuestionButton.setDisable(true);
-    }
-
-    public void onHintButtonClick() {
-        questionLabel.setText(myGame.getQuestionAsString() + System.lineSeparator() + System.lineSeparator() + "Hint: " + myGame.getHint());
-        hintButton.setDisable(true);
-    }
-
-    public void onAnswerButtonClick(javafx.event.ActionEvent actionEvent, int i) throws IOException {
+    public void onAnswerButtonClick(ActionEvent actionEvent, int i) throws IOException {
         if (myGame.getRightAnswerInt() == i) {
             myGame.addPoints();
             Alert alert = new Alert(Alert.AlertType.NONE, "Correct!", ButtonType.OK);
@@ -117,6 +100,7 @@ public class Stage03Controller implements Initializable {
             myProgressBar.setProgress((double) myGame.getQuestionNumber()/myGame.getMaxQuestions());
         } else {
             h.updateHighscore(myGame.getPlayerName(), myGame.getPoints());
+            // open Stage 4
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Stage04_GameEnd.fxml")) ;
             Parent root = loader.load();
             Stage04Controller controller = loader.getController();
@@ -128,20 +112,31 @@ public class Stage03Controller implements Initializable {
         }
     }
 
-    public void drawNewQuestion() {
-        myGame.drawNewQuestion();
-        currentScoreLabel.setText("Current score: " + myGame.getPoints());
-        questionLabel.setText(myGame.getQuestionAsString());
-        questionNumberLabel.setText("Question number " + myGame.getQuestionNumber() + " of " + myGame.getMaxQuestions());
+    public void onFiftyFiftyButtonClick() {
+        Boolean[] ans = new Boolean[] {false, false, false, false};
+        List<Integer> answers = new ArrayList<>(List.of(0, 1, 2, 3));
+        answers.remove(myGame.getRightAnswerInt());  // remove index of right answer --> indices of 3 wrong answers remain
+        answers.remove((int) (Math.random() * 3));   // remove 1 random index of 3 remaining wrong answers --> indices of 2 wrong answers remain in arraylist
+        for (int i: answers) {
+            ans[i] = true;                           // change value of two values in array ans > true (used to set Disable > true)
+        }
         Button[] answerButtons = new Button[] {answer0Button, answer1Button, answer2Button, answer3Button};
         for (int i = 0; i < answerButtons.length; i++) {
-            answerButtons[i].setDisable(false);
-            answerButtons[i].setText(myGame.getAnswer(i));
+            answerButtons[i].setDisable(ans[i]);     // set Disable of all buttons according to array ans
         }
-        questionLabel.requestFocus();
+        fiftyFiftyButton.setDisable(true);
     }
 
-    @FXML
+    public void onSkipQuestionButtonClick() {
+        drawNewQuestion();
+        skipQuestionButton.setDisable(true);
+    }
+
+    public void onHintButtonClick() {
+        questionLabel.setText(myGame.getQuestionAsString() + System.lineSeparator() + System.lineSeparator() + "Hint: " + myGame.getHint());
+        hintButton.setDisable(true);
+    }
+
     public void onQuitGameButtonClick() {
         ButtonType yes = new ButtonType("Yes", ButtonBar.ButtonData.YES);
         ButtonType no = new ButtonType("No", ButtonBar.ButtonData.NO);

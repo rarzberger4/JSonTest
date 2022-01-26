@@ -10,32 +10,26 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Stage04Controller implements Initializable {
+public class Stage04Controller {
 
-    @FXML
-    private Button quitGameButton;
     @FXML
     private Label congratsLabel;
+    @FXML
+    private Button quitGameButton;
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-    }
-
+    // start using current game to create congratulation message
     public void startScene(Game game) {
         congratsLabel.setText("Congratulations, you finished the game!" + System.lineSeparator() + game.getVictory());
     }
 
-    @FXML
     public void onPlayGameButtonClick(ActionEvent actionEvent) throws IOException {
         MainStageController.onPlayGameButtonClick(actionEvent);
     }
 
-    @FXML
     public void onShowHighscoreBClick(ActionEvent actionEvent) throws IOException {
         MainStageController.onShowHighscoreBClick(actionEvent);
     }
 
-    @FXML
     public void onQuitGameButtonClick() {
         MainStageController.onQuitGameButtonClick(quitGameButton);
     }

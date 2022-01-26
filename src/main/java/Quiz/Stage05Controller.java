@@ -28,20 +28,19 @@ public class Stage05Controller implements Initializable {
 
     private final Highscore h = new Highscore();
 
+    // start scene initializing TableView using players as items of high score
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         playerNameTableViewColumn.setCellValueFactory(new PropertyValueFactory<>("playerName"));
         scoreTableViewColumn.setCellValueFactory(new PropertyValueFactory<>("score"));
         timeStampTableViewColumn.setCellValueFactory(new PropertyValueFactory<>("timeStamp"));
-        highscoreTableView.setItems(FXCollections.observableArrayList((h.getHighscore())));
+        highscoreTableView.setItems(FXCollections.observableArrayList((h.getHighscore()))); // make high score an observable arraylist and use items to fill table
     }
 
-    @FXML
     public void onPlayGameButtonClick(ActionEvent actionEvent) throws IOException {
         MainStageController.onPlayGameButtonClick(actionEvent);
     }
 
-    @FXML
     public void onQuitGameButtonClick() {
         MainStageController.onQuitGameButtonClick(quitGameButton);
     }

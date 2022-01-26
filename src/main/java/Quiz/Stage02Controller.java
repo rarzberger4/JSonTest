@@ -31,7 +31,6 @@ public class Stage02Controller {
     private int maxQuestions;
 
     // Getting the TextField Input
-    @FXML
     public void getPlayerName() {
         playerName = playerNameTextField.getText();
     }
@@ -51,7 +50,6 @@ public class Stage02Controller {
     }
 
     // Error checks before actually starting the Game
-    @FXML
     public void onStartGameButtonClick(ActionEvent actionEvent) throws IOException {
         getPlayerName();
         getMaxQuestions();
