@@ -83,7 +83,7 @@ public class Stage03Controller {
     }
 
     public void onAnswerButtonClick(ActionEvent actionEvent, int i) throws IOException {
-        if (myGame.getRightAnswerInt() == i) {
+        if (myGame.getRightAnswerInt() == i) {      // check if answer equals correct answer
             myGame.addPoints();
             Alert alert = new Alert(Alert.AlertType.NONE, "Correct!", ButtonType.OK);
             s.playPosSound();
@@ -97,7 +97,7 @@ public class Stage03Controller {
         if (myGame.getQuestionNumber() != myGame.getMaxQuestions()) {
             myGame.addQuestionNumber();
             drawNewQuestion();
-            myProgressBar.setProgress((double) myGame.getQuestionNumber()/myGame.getMaxQuestions());
+            myProgressBar.setProgress((double) myGame.getQuestionNumber()/myGame.getMaxQuestions());    // update progress bar
         } else {
             h.updateHighscore(myGame.getPlayerName(), myGame.getPoints());
             // open Stage 4
